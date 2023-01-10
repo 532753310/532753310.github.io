@@ -1,0 +1,7 @@
+/* Here is your custom css styles. */
+*{
+    cursor: url("/medias/normal.cur"),auto!important;
+}
+:active{
+    cursor: url("/medias/Comix_White_Link.cur"),auto!important;
+}
