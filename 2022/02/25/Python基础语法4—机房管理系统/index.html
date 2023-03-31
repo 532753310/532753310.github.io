@@ -1,0 +1,1381 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python基础语法4—机房管理系统, Note">
+    <meta name="description" content="海盐商贸学校现需要一个管理系统，有查看机房、增加机房、借用机房、归还机房等功能。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python基础语法4—机房管理系统 | Note</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Note</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Note</div>
+        <div class="logo-desc">
+            
+            公网域名：xiaolily.cn
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python基础语法4—机房管理系统</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/">
+                                <span class="chip bg-color">项目教学</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-03-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="一、类的创建"><a href="#一、类的创建" class="headerlink" title="一、类的创建"></a>一、类的创建</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义"小孩"类</span>
+<span class="token keyword">class</span> <span class="token class-name">kid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 属性：爱好是玩</span>
+    hobby <span class="token operator">=</span> <span class="token string">'玩'</span>
+    
+    <span class="token comment"># 方法：吃饭</span>
+    <span class="token keyword">def</span> <span class="token function">eatFood</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>food<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'吃</span><span class="token interpolation"><span class="token punctuation">{</span>food<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+xiaoming <span class="token operator">=</span> kid<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 类的实例化，小明属于“小孩”类，小明就具备“小孩”类中的属性和方法</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>xiaoming<span class="token punctuation">.</span>hobby<span class="token punctuation">)</span>
+xiaoming<span class="token punctuation">.</span>eatFood<span class="token punctuation">(</span><span class="token string">'包子'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个self是用来做什么的呢？🤦‍♂️</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义"小孩"类</span>
+<span class="token keyword">class</span> <span class="token class-name">kid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 属性：爱好是玩</span>
+    hobby <span class="token operator">=</span> <span class="token string">'玩'</span>
+    
+    <span class="token comment"># 方法：吃饭</span>
+    <span class="token keyword">def</span> <span class="token function">eatFood</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>food<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'吃</span><span class="token interpolation"><span class="token punctuation">{</span>food<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 方法：说话（说出自己的爱好）</span>
+    <span class="token keyword">def</span> <span class="token function">say</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'我的爱好是</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>hobby<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+ 
+xiaoming <span class="token operator">=</span> kid<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 类的实例化，小明属于“小孩”类，小明就具备“小孩”类中的属性和方法</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>xiaoming<span class="token punctuation">.</span>hobby<span class="token punctuation">)</span>
+xiaoming<span class="token punctuation">.</span>eatFood<span class="token punctuation">(</span><span class="token string">'包子'</span><span class="token punctuation">)</span>
+xiaoming<span class="token punctuation">.</span>say<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>self是在类还没有创建完成的时候，却又想在类的内容调用类属性或其他方法时<br>就可以用self.属性名或self.方法名调用自身的方法或属性</p>
+<h2 id="二、类的初始化"><a href="#二、类的初始化" class="headerlink" title="二、类的初始化"></a>二、类的初始化</h2><p>初始化方法的作用在于：当每个实例对象创建时，该方法内的代码无须调用就会自动执行。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义"小孩"类</span>
+<span class="token keyword">class</span> <span class="token class-name">kid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 当类实例化的时候自动执行，设置“姓名”属性为小明</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'小明'</span>
+
+    <span class="token comment"># 属性：爱好是玩</span>
+    hobby <span class="token operator">=</span> <span class="token string">'玩'</span>
+    
+    <span class="token comment"># 方法：吃饭</span>
+    <span class="token keyword">def</span> <span class="token function">eatFood</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>food<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'吃</span><span class="token interpolation"><span class="token punctuation">{</span>food<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 方法：说话（说出自己的爱好）</span>
+    <span class="token keyword">def</span> <span class="token function">say</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'我的爱好是</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>hobby<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+ 
+xiaoming <span class="token operator">=</span> kid<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>xiaoming<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然，初始化方法的正确用法是在类实例化的时候，我们给一些属性设初值。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义"小孩"类</span>
+<span class="token keyword">class</span> <span class="token class-name">kid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 当类实例化的时候自动执行，设置“姓名”属性为小明</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+
+    <span class="token comment"># 属性：爱好是玩</span>
+    hobby <span class="token operator">=</span> <span class="token string">'玩'</span>
+    
+    <span class="token comment"># 方法：吃饭</span>
+    <span class="token keyword">def</span> <span class="token function">eatFood</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>food<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'吃</span><span class="token interpolation"><span class="token punctuation">{</span>food<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 方法：说出自己的爱好</span>
+    <span class="token keyword">def</span> <span class="token function">say</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'我的爱好是</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>hobby<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'我的姓名是</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+<span class="token comment"># 实例化对象小明</span>
+xiaoming <span class="token operator">=</span> kid<span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>xiaoming<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+xiaoming<span class="token punctuation">.</span>say<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 实例化对象小红</span>
+xiaohong <span class="token operator">=</span> kid<span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>xiaoming<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+xiaoming<span class="token punctuation">.</span>say<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、类的继承与定制"><a href="#三、类的继承与定制" class="headerlink" title="三、类的继承与定制"></a>三、类的继承与定制</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ball</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    weight <span class="token operator">=</span> <span class="token number">10</span>
+ 
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'小球移动速度是{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>speed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">new_ball</span><span class="token punctuation">(</span>ball<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'小球移动速度是{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>speed<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+ball_1 <span class="token operator">=</span> ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ball_2 <span class="token operator">=</span> new_ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ball_1<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+ball_2<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是这样直接重写父类的方法，如果父类的方法发生变化，子类的方法也得重新修改，不利于我们维护，最好先继承父类的方法，再做修改。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ball</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    weight <span class="token operator">=</span> <span class="token number">10</span>
+ 
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'小球移动速度是{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>speed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">new_ball</span><span class="token punctuation">(</span>ball<span class="token punctuation">)</span><span class="token punctuation">:</span>
+ 
+    <span class="token keyword">def</span> <span class="token function">move</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ball<span class="token punctuation">.</span>move<span class="token punctuation">(</span>self<span class="token punctuation">,</span>speed<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+ 
+ball_1 <span class="token operator">=</span> ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ball_2 <span class="token operator">=</span> new_ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ball_1<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+ball_2<span class="token punctuation">.</span>move<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="项目一、智能储蓄罐"><a href="#项目一、智能储蓄罐" class="headerlink" title="项目一、智能储蓄罐"></a>项目一、智能储蓄罐</h1><p>你有一个智能储蓄罐，该储蓄罐安装了高级人工智能芯片，会做四件事。<br>一是可以查询余额 (假设你是一个中东土豪，在对象实例化时，你已经在该储蓄罐已经存了100元)<br>二是可以存钱<br>三是可以取钱<br>四是可以换算美元汇率，1美元=6.3717人民币</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义"智能存钱罐"类</span>
+<span class="token keyword">class</span> <span class="token class-name">moneyBox</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    
+    <span class="token comment"># 初始化函数，类实例化的时候自动调用</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>money<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>money <span class="token operator">=</span> money
+
+    <span class="token comment"># 菜单</span>
+    <span class="token keyword">def</span> <span class="token function">menu</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'欢迎使用智能存钱罐'</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            user_choice <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请选择功能（1、查询余额 2、存钱 3、取钱 4、换算美元 5、退出）：'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> user_choice <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>showMoney<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> user_choice <span class="token operator">==</span> <span class="token string">'2'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>saveMoney<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> user_choice <span class="token operator">==</span> <span class="token string">'3'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>drawMoney<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> user_choice <span class="token operator">==</span> <span class="token string">'4'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>exchangeRate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> user_choice <span class="token operator">==</span> <span class="token string">'5'</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'谢谢您的使用，下次记得多来存点钱啊'</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span>
+
+    <span class="token comment"># 展示余额    </span>
+    <span class="token keyword">def</span> <span class="token function">showMoney</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'你现在一共存了</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>money<span class="token punctuation">}</span></span><span class="token string">元'</span></span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 存钱</span>
+    <span class="token keyword">def</span> <span class="token function">saveMoney</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        money <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入你要存多少钱：'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>money <span class="token operator">=</span> self<span class="token punctuation">.</span>money <span class="token operator">+</span> money
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'你现在一共存了</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>money<span class="token punctuation">}</span></span><span class="token string">元'</span></span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 取钱</span>
+    <span class="token keyword">def</span> <span class="token function">drawMoney</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        money <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入你要取多少钱：'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>money <span class="token operator">&lt;</span> money<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'抱歉，您太穷了，您没有那么多钱'</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        self<span class="token punctuation">.</span>money <span class="token operator">=</span> self<span class="token punctuation">.</span>money <span class="token operator">-</span> money
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'你现在一共存了</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>money<span class="token punctuation">}</span></span><span class="token string">元'</span></span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 汇率换算</span>
+    <span class="token keyword">def</span> <span class="token function">exchangeRate</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dollar <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>money<span class="token operator">/</span><span class="token number">6.3717</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment"># round(x,y) 对x的前y位四舍五入取整</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'换算成美元是</span><span class="token interpolation"><span class="token punctuation">{</span>dollar<span class="token punctuation">}</span></span><span class="token string">$'</span></span><span class="token punctuation">)</span>
+        
+my_moneyBox <span class="token operator">=</span> moneyBox<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+my_moneyBox<span class="token punctuation">.</span>menu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'按下任意键退出程序'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="项目二、智能点菜机器人"><a href="#项目二、智能点菜机器人" class="headerlink" title="项目二、智能点菜机器人"></a>项目二、智能点菜机器人</h1><p><strong>练习：</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''
+项目需求：
+你是一名享誉全球的考古学家，在三星堆的发掘作业中，
+你发现了一个奇怪的机器，经过研究，这是距今23亿万年前的亚特兰蒂斯文明所遗留的科技。
+那时的人类已经可以实现自动点菜的功能了，这无疑是一项颠覆世界的发现。
+但因年代久远，丢失了一些代码片段，你同时作为中职Python首席科学家，需要补全代码
+'''</span>
+
+<span class="token comment"># 定义“菜”类</span>
+<span class="token keyword">class</span> <span class="token class-name">dish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 每道菜有两个属性、菜的名字和价格，每道菜的这两个属性各不相同</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>price<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name 
+        self<span class="token punctuation">.</span>price <span class="token operator">=</span> price
+
+    <span class="token comment"># 每道菜具有相同的方法、如你所见，即展示自己的菜名和价格，</span>
+    <span class="token comment"># 因为它已经是一个成熟的“菜”类了，要学会自己介绍自己</span>
+    <span class="token keyword">def</span> <span class="token function">show_info</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'菜名：</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string">,价格</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>price<span class="token punctuation">}</span></span><span class="token string">元'</span></span><span class="token punctuation">)</span> 
+
+<span class="token comment"># 定义“智能点菜机器人”类</span>
+<span class="token keyword">class</span> <span class="token class-name">orderMachine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token comment"># 类初始化时，我们希望他有一个初始的菜单，dish_list里管理的应该是“菜”类的实例化对象</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>dish_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>dish_list <span class="token operator">=</span> dish_list
+        <span class="token comment"># 用户点的菜，这个玩意不需要实例化的时候从外面传，因为这个得靠用户自己点，总不能还没点就有东西吧</span>
+        self<span class="token punctuation">.</span>user_order_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  
+
+    <span class="token comment"># 操作菜单（5分）</span>
+    <span class="token keyword">def</span> <span class="token function">menu</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'今年是超新星纪元305年，欢迎使用亚特兰蒂斯点菜系统：'</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            user_input <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请选择：1、查看菜单 2、增加菜单 3、点菜 4、退出系统：'</span><span class="token punctuation">)</span>
+            <span class="token comment"># 记得看演示程序运行的效果，然后补全</span>
+    
+    <span class="token comment"># 查看菜单（5分）</span>
+    <span class="token keyword">def</span> <span class="token function">show_menu</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 记得看演示程序运行的效果，然后补全</span>
+    	<span class="token keyword">if</span> user_input <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>show_menu<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 增加菜单（5分）</span>
+    <span class="token comment"># 此功能最好需要输入密码才可以使用，否则用户万一捣乱，往菜单里添加一个“稀饭煮翔”，岂不糟糕？</span>
+    <span class="token keyword">def</span> <span class="token function">add_dish</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 记得看演示程序运行的效果，然后补全</span>
+
+    <span class="token comment"># 点菜（5分）</span>
+    <span class="token comment"># 消费 100 元及以上享受 8 折优惠，100 元以下享受每满 10 减 1 优惠”的活动（5分）</span>
+    <span class="token keyword">def</span> <span class="token function">order_dish</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 记得看演示程序运行的效果，然后补全</span>
+        
+<span class="token comment"># “菜”类的实例化</span>
+dish1 <span class="token operator">=</span> dish<span class="token punctuation">(</span><span class="token string">'红烧排骨'</span><span class="token punctuation">,</span><span class="token number">46</span><span class="token punctuation">)</span>
+dish2 <span class="token operator">=</span> dish<span class="token punctuation">(</span><span class="token string">'香炸刀鱼'</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span>
+dish3 <span class="token operator">=</span> dish<span class="token punctuation">(</span><span class="token string">'虾仁炒蛋'</span><span class="token punctuation">,</span><span class="token number">68</span><span class="token punctuation">)</span>
+dish_list <span class="token operator">=</span> <span class="token punctuation">[</span>dish1<span class="token punctuation">,</span>dish2<span class="token punctuation">,</span>dish3<span class="token punctuation">]</span>
+<span class="token comment"># “智能点菜机器人”类的实例化</span>
+my_orderMachine <span class="token operator">=</span> orderMachine<span class="token punctuation">(</span>dish_list<span class="token punctuation">)</span>
+my_orderMachine<span class="token punctuation">.</span>menu<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="项目三、机房管理系统"><a href="#项目三、机房管理系统" class="headerlink" title="项目三、机房管理系统"></a>项目三、机房管理系统</h1><h2 id="一、定义“房间”类"><a href="#一、定义“房间”类" class="headerlink" title="一、定义“房间”类"></a>一、定义“房间”类</h2><p>“房间”类就两个属性，房间号和房间名</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">room</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>number<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>number <span class="token operator">=</span> number
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+ 
+Room203 <span class="token operator">=</span> room<span class="token punctuation">(</span><span class="token number">203</span><span class="token punctuation">,</span><span class="token string">'网络综合布线工作室'</span><span class="token punctuation">)</span> <span class="token comment"># 实例化对象</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>Room203<span class="token punctuation">.</span>number<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Room203<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、定义“机房管理系统”类"><a href="#二、定义“机房管理系统”类" class="headerlink" title="二、定义“机房管理系统”类"></a>二、定义“机房管理系统”类</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">room</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>number<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>number <span class="token operator">=</span> number
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+ 
+<span class="token keyword">class</span> <span class="token class-name">system</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 菜单</span>
+    <span class="token keyword">def</span> <span class="token function">menu</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'欢迎使用海盐商贸学校机房管理系统！！！'</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            choice <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请选择(1、查看所有机房2、增加机房3、借用机房4、归还机房5、退出)：'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> choice <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>showAllRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'2'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>addRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'3'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>borrowRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'4'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>returnRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'5'</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+
+HaiYanSystem <span class="token operator">=</span> system<span class="token punctuation">(</span><span class="token punctuation">)</span>
+HaiYanSystem<span class="token punctuation">.</span>menu<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="三、查看所有机房"><a href="#三、查看所有机房" class="headerlink" title="三、查看所有机房"></a>三、查看所有机房</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">room</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># state为借出状态，默认未借出</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>number<span class="token punctuation">,</span>name<span class="token punctuation">,</span>state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>number <span class="token operator">=</span> number
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>state <span class="token operator">=</span> state
+    
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>state <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            state_text <span class="token operator">=</span> <span class="token string">'未借用'</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            state_text <span class="token operator">=</span> <span class="token string">'已借用'</span>
+        <span class="token keyword">return</span> <span class="token string">'机房房间号{},机房名字{},机房借用状态{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>number<span class="token punctuation">,</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>state_text<span class="token punctuation">)</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">system</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        Room203 <span class="token operator">=</span> room<span class="token punctuation">(</span><span class="token string">'203'</span><span class="token punctuation">,</span><span class="token string">'网络综合布线工作室'</span><span class="token punctuation">)</span>
+        Room204 <span class="token operator">=</span> room<span class="token punctuation">(</span><span class="token string">'204'</span><span class="token punctuation">,</span><span class="token string">'网络搭建机房'</span><span class="token punctuation">)</span>
+        Room305 <span class="token operator">=</span> room<span class="token punctuation">(</span><span class="token string">'305'</span><span class="token punctuation">,</span><span class="token string">'Python学习机房'</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>Room_list <span class="token operator">=</span> <span class="token punctuation">[</span>Room203<span class="token punctuation">,</span>Room204<span class="token punctuation">,</span>Room305<span class="token punctuation">]</span>
+    
+    <span class="token comment"># 菜单</span>
+    <span class="token keyword">def</span> <span class="token function">menu</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'欢迎使用海盐商贸学校机房管理系统！！！'</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            choice <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请选择(1、查看所有机房2、增加机房3、借用机房4、归还机房5、退出)：'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> choice <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>showAllRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'2'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>addRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'3'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>borrowRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'4'</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>returnRoom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> choice <span class="token operator">==</span> <span class="token string">'5'</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+
+    <span class="token comment">#查看所有机房</span>
+    <span class="token keyword">def</span> <span class="token function">showAllRoom</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> Room <span class="token keyword">in</span> self<span class="token punctuation">.</span>Room_list<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>Room<span class="token punctuation">)</span>
+
+HaiYanSystem <span class="token operator">=</span> system<span class="token punctuation">(</span><span class="token punctuation">)</span>
+HaiYanSystem<span class="token punctuation">.</span>menu<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="四、增加机房"><a href="#四、增加机房" class="headerlink" title="四、增加机房"></a>四、增加机房</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#增加机房</span>
+<span class="token keyword">def</span> <span class="token function">addRoom</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    number <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入房间号：'</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入机房名：'</span><span class="token punctuation">)</span>
+    new_room <span class="token operator">=</span> room<span class="token punctuation">(</span>number<span class="token punctuation">,</span>name<span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>Room_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>new_room<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="五、借用机房"><a href="#五、借用机房" class="headerlink" title="五、借用机房"></a>五、借用机房</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#借用机房</span>
+<span class="token keyword">def</span> <span class="token function">borrowRoom</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    number <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入你要借用的机房房间号：'</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> room <span class="token keyword">in</span> self<span class="token punctuation">.</span>Room_list<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> room<span class="token punctuation">.</span>number <span class="token operator">==</span> number<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> room<span class="token punctuation">.</span>state <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'成功借用机房'</span><span class="token punctuation">)</span>
+                room<span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'该机房已被借用'</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'没有该机房'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="六、归还机房"><a href="#六、归还机房" class="headerlink" title="六、归还机房"></a>六、归还机房</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#归还机房</span>
+<span class="token keyword">def</span> <span class="token function">returnRoom</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    number <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">'请输入你要归还的机房房间号：'</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> room <span class="token keyword">in</span> self<span class="token punctuation">.</span>Room_list<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> room<span class="token punctuation">.</span>number <span class="token operator">==</span> number<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> room<span class="token punctuation">.</span>state <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'成功归还机房'</span><span class="token punctuation">)</span>
+                room<span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'该机房没被借用'</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'没有该机房'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">彭韦浩</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://10.163.72.39:4000/2022/02/25/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%954%E2%80%94%E6%9C%BA%E6%88%BF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">http://10.163.72.39:4000/2022/02/25/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%954%E2%80%94%E6%9C%BA%E6%88%BF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">彭韦浩</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/">
+                                    <span class="chip bg-color">项目教学</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/03/01/Python%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%911%E2%80%94%E5%88%B0%E4%BA%94%E7%A7%92%E5%B0%B1%E5%81%9C%E4%B8%8B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Python游戏开发1—到五秒就停下">
+                        
+                        <span class="card-title">Python游戏开发1—到五秒就停下</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一个趣味的Python小游戏，通过这个项目，我们了解Pygame的最小开发框架。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/">
+                        <span class="chip bg-color">项目教学</span>
+                    </a>
+                    
+                    <a href="/tags/Pygame/">
+                        <span class="chip bg-color">Pygame</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/20/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%953%E2%80%94%E9%B1%BC%E5%AD%90%E9%85%B1%E8%A6%81%E4%B9%B0%E5%A4%9A%E5%B0%91%EF%BC%9F/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Python基础语法3—鱼子酱要买多少？">
+                        
+                        <span class="card-title">Python基础语法3—鱼子酱要买多少？</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这个项目通过一个很简单的案例，讲解函数相关知识，并体会程序设计的结构化原则。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/">
+                        <span class="chip bg-color">项目教学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            <!-- Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">彭韦浩</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">33.7k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">琼ICP备2021004272号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:532753310@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=532753310" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 532753310" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!-- 鼠标点击烟花效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/djtx.js"></script>
