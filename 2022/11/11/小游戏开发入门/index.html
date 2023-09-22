@@ -326,21 +326,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-24
+                    2023-06-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    808
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -396,28 +396,104 @@
 <li>22.画一个好看的火焰，双击火焰，隐含，\本站点\火箭移动距离 == 0时<strong>隐含</strong><h1 id="2、爱心表白"><a href="#2、爱心表白" class="headerlink" title="2、爱心表白"></a>2、爱心表白</h1></li>
 </ul>
 <ol>
-<li>工程浏览器—新建一个画面—爱心表白</li>
-<li>切换到工程浏览器—系统配置—设置开发系统—设置运行系统—主画面配置—设置爱心表白为主画面</li>
-<li>工程浏览器—数据库—数据词典—新建—灯1~灯5（内存离散）</li>
-<li>图库里面自己选几个好看的灯</li>
-<li>把几个灯分别关联上各自的变量</li>
-<li>用工具箱里的多边形画一个桃心</li>
-<li>双击桃心—按下时<pre class="line-numbers language-c" data-language="c"><code class="language-c">\\本站点\灯<span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>右键—画面属性—命令语言<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">if</span><span class="token punctuation">(</span>\\本站点\灯<span class="token number">1</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    \\本站点\灯<span class="token number">2</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<li><p>工程浏览器—新建一个画面—爱心表白</p>
+</li>
+<li><p>切换到工程浏览器—系统配置—设置开发系统—设置运行系统—主画面配置—设置爱心表白为主画面</p>
+</li>
+<li><p>工程浏览器—数据库—数据词典—新建—灯1~灯5（内存离散）</p>
+</li>
+<li><p>图库里面自己选几个好看的灯</p>
+</li>
+<li><p>把几个灯分别关联上各自的变量</p>
+</li>
+<li><p>用工具箱里的多边形画一个桃心</p>
+</li>
+<li><p>双击桃心—按下时</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">\\本站点\灯<span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>右键—画面属性—命令语言</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//第四次循环执行</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>\\本站点\灯<span class="token number">4</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    \\本站点\灯<span class="token number">5</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//第三次循环执行</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>\\本站点\灯<span class="token number">3</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    \\本站点\灯<span class="token number">4</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//第二次循环执行</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>\\本站点\灯<span class="token number">2</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    \\本站点\灯<span class="token number">3</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//第一次循环执行</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>\\本站点\灯<span class="token number">1</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    \\本站点\灯<span class="token number">2</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>工具箱—点位图—右键—从文件中加载（记得选中ALL files）</p>
+</li>
+<li><p>工具箱—文本—写几个表白文字</p>
+</li>
+<li><p>分别给图片和文字添加隐含效果，隐含条件为灯5</p>
+</li>
+<li><p>右键爱心—图素位置—图素前移</p>
+</li>
+<li><p>再给爱心添加闪烁效果，闪烁条件灯5</p>
+</li>
+<li><p>扩展任务：要求灯全部亮起后，在依次熄灭，循环往复</p>
 <h1 id="3、到五秒就停下！"><a href="#3、到五秒就停下！" class="headerlink" title="3、到五秒就停下！"></a>3、到五秒就停下！</h1></li>
+<li><p>新建一个画面</p>
+</li>
+<li><p>工程浏览器-系统配置-设置开发系统-设置运行系统-主画面配置</p>
+</li>
+<li><p>工程浏览器-数据库-数据词典-计时（实数）、开始游戏（离散）、游戏成功判定（离散）、游戏失败判定（离散）</p>
+</li>
+<li><p>在画面中使用工具箱制作一个按钮—开始游戏</p>
+</li>
+<li><p>双击开始游戏按钮—按下时</p>
+<pre class="line-numbers language-none"><code class="language-none">if(\\本站点\开始游戏==0){
+	\\本站点\开始游戏 = 1;
+	\\本站点\计时 = 0;
+}else{
+	\\本站点\开始游戏 = 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>使用工具箱制作一个文本，双击文本，模拟值输出“计时”（注意输出一位小数）</p>
+</li>
+<li><p>右键—画面属性-命令语言</p>
+<pre class="line-numbers language-none"><code class="language-none">// 如果按钮按下就开始计时
+if (\\本站点\开始游戏==1){
+\\本站点\计时 = \\本站点\计时 + 0.1;
+}
+
+// 成功判定
+if(\\本站点\计时==1.0 &amp;&amp; \\本站点\开始游戏==0){
+    \\本站点\游戏成功判定=1;
+}else{
+    \\本站点\游戏成功判定=0;
+}
+
+// 失败判定
+if(\\本站点\计时!=1.0 &amp;&amp; \\本站点\开始游戏==0 &amp;&amp; \\本站点\计时!=0){
+    \\本站点\游戏失败判定 = 1;
+}else{
+    \\本站点\游戏失败判定 = 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="4、幸运大转盘"><a href="#4、幸运大转盘" class="headerlink" title="4、幸运大转盘"></a>4、幸运大转盘</h1></li>
+<li><p>产生随机数：工程浏览器-数据库-数据词典-新建变量随机数（I/O整数）—连接设备—COM1—新IO设备—PLC—亚控—仿真PLC——COM—名称随便填—COM口随便选—地址是0-10随便一个—寄存器RADOM100—数据类型SHORT</p>
+</li>
+<li><p>新建指针的角度、抽奖值（都是内存整数）</p>
+</li>
+<li><p>画一个转盘</p>
+</li>
+<li><p>画一个指针，指针关联变量（指针的角度）</p>
+</li>
+<li><p>新建一个开始按钮，按下去的时候</p>
+<pre class="line-numbers language-none"><code class="language-none">  \\本站点\抽奖值 = \\本站点\随机值;
+\\本站点\指针的角度 = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ol>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//计数</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>\\本站点\开关<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-\\本站点\计数<span class="token operator">=</span>\\本站点\计数<span class="token operator">+</span><span class="token number">0.1</span><span class="token punctuation">;</span>
-<span class="token comment">//判断</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>\\本站点\计数<span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">0.00001</span><span class="token operator">&amp;&amp;</span>\\本站点\开关<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-\\本站点\成功判定<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">else</span> \\本站点\成功判定<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>\\本站点\计数<span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">0.00001</span><span class="token operator">&amp;&amp;</span>\\本站点\开关<span class="token operator">==</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>\\本站点\计数<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
-\\本站点\失败判定<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">else</span> \\本站点\失败判定<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>5.右键—画面命令语言</p>
+<pre class="line-numbers language-none"><code class="language-none">  if(\\本站点\指针的角度&lt;\\本站点\抽奖值){
+	\\本站点\指针的角度 = \\本站点\指针的角度 + 1;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -810,7 +886,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">33.7k</span>
+                        class="white-color">65.5k</span>
             
             
             
@@ -994,25 +1070,9 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
      

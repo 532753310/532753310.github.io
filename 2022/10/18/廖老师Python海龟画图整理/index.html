@@ -326,7 +326,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-31
+                    2023-04-28
                 </div>
                 
 
@@ -751,9 +751,22 @@ t<span class="token punctuation">.</span>pendown<span class="token punctuation">
 t<span class="token punctuation">.</span>dot<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token string">'white'</span><span class="token punctuation">)</span>
 
 t<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="22-画六芒星"><a href="#22-画六芒星" class="headerlink" title="22.画六芒星"></a>22.画六芒星</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> turtle <span class="token keyword">as</span> t
 
+t<span class="token punctuation">.</span>bgcolor<span class="token punctuation">(</span><span class="token string">'gray'</span><span class="token punctuation">)</span> <span class="token comment"># 设置背景颜色为灰色</span>
+t<span class="token punctuation">.</span>pensize<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>      <span class="token comment"># 设置笔的宽度</span>
 
-<h3 id="13-画棋盘格"><a href="#13-画棋盘格" class="headerlink" title="13.画棋盘格"></a>13.画棋盘格</h3><p>利用Python中自带Turtle库绘制如下黑白棋盘。要求：画布大小宽800高600，窗体显示500<em>500，初始位置在（300,300），画出如下10</em>10的黑白格子，每个格子大小为50*50</p>
+<span class="token comment"># 将笔抬起来之后再移动到-100,100这个点再放下</span>
+t<span class="token punctuation">.</span>penup<span class="token punctuation">(</span><span class="token punctuation">)</span>         
+t<span class="token punctuation">.</span>goto<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
+t<span class="token punctuation">.</span>pendown<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    t<span class="token punctuation">.</span>fd<span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">)</span>      <span class="token comment"># 往前移动150</span>
+    t<span class="token punctuation">.</span>lt<span class="token punctuation">(</span><span class="token number">225</span><span class="token punctuation">)</span>      <span class="token comment"># 向左转225度</span>
+
+t<span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="23-画四个相连的五角星"><a href="#23-画四个相连的五角星" class="headerlink" title="23.画四个相连的五角星"></a>23.画四个相连的五角星</h3><h3 id="13-画棋盘格"><a href="#13-画棋盘格" class="headerlink" title="13.画棋盘格"></a>13.画棋盘格</h3><p>利用Python中自带Turtle库绘制如下黑白棋盘。要求：画布大小宽800高600，窗体显示500<em>500，初始位置在（300,300），画出如下10</em>10的黑白格子，每个格子大小为50*50</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> turtle <span class="token keyword">as</span> t
 t<span class="token punctuation">.</span>screensize<span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span><span class="token number">600</span><span class="token punctuation">,</span><span class="token string">'white'</span><span class="token punctuation">)</span> <span class="token comment"># 设置画布宽、高、背景颜色</span>
 t<span class="token punctuation">.</span>speed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># 设置海龟的速度,0是最快</span>
@@ -1183,7 +1196,7 @@ t<span class="token punctuation">.</span>done<span class="token punctuation">(</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">33.7k</span>
+                        class="white-color">65.5k</span>
             
             
             
@@ -1367,25 +1380,9 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
      

@@ -334,21 +334,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-16
+                    2023-09-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    16 分
                 </div>
                 
 
@@ -521,7 +521,7 @@ user_list <span class="token operator">=</span> res_json<span class="token punct
 <span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>common<span class="token punctuation">.</span>by <span class="token keyword">import</span> By
 <span class="token keyword">import</span> time
 
-driver<span class="token operator">=</span>webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span>executable_path<span class="token operator">=</span><span class="token string">'chromedriver.exe'</span><span class="token punctuation">)</span>
+driver<span class="token operator">=</span>webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span><span class="token punctuation">)</span>
 driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://10.163.72.55/#/index/IndexTask'</span><span class="token punctuation">)</span> <span class="token comment"># 访问页面</span>
 time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># 暂停两秒，等待浏览器缓冲</span>
 
@@ -672,7 +672,7 @@ cmdline<span class="token punctuation">.</span>execute<span class="token punctua
         item <span class="token operator">=</span> DoubanItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
         item<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bs<span class="token punctuation">.</span>find<span class="token punctuation">(</span>class_<span class="token operator">=</span><span class="token string">'arti_title'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
         <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="破解并下载视频流"><a href="#破解并下载视频流" class="headerlink" title="破解并下载视频流"></a>破解并下载视频流</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>re<span class="token punctuation">,</span>random
+<h1 id="十一、破解并下载视频流"><a href="#十一、破解并下载视频流" class="headerlink" title="十一、破解并下载视频流"></a>十一、破解并下载视频流</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>re<span class="token punctuation">,</span>random
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
 
 <span class="token comment"># 伪装请求头</span>
@@ -720,6 +720,52 @@ indexs_list<span class="token operator">=</span>re<span class="token punctuation
         video<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
         count <span class="token operator">+=</span> <span class="token number">1</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\r[下载进度]:{}{:.2f}%"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token string">'&gt;'</span><span class="token operator">*</span>count<span class="token punctuation">,</span>count<span class="token operator">/</span><span class="token builtin">len</span><span class="token punctuation">(</span>filesequences_list<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="十二、新遇到的一点反爬问题"><a href="#十二、新遇到的一点反爬问题" class="headerlink" title="十二、新遇到的一点反爬问题"></a>十二、新遇到的一点反爬问题</h2><p>最近爬这个网站遇到一点问题，<a target="_blank" rel="noopener" href="https://www.ly.com/hotel/hotellist?pageSize=20&amp;t=1693794571107&amp;city=321&amp;inDate=2023-09-04&amp;outDate=2023-09-05&amp;filterList=8888_1">https://www.ly.com/hotel/hotellist?pageSize=20&amp;t=1693794571107&amp;city=321&amp;inDate=2023-09-04&amp;outDate=2023-09-05&amp;filterList=8888_1</a></p>
+<p>以前可以爬，现在不能爬，经过研究，发现是网站开发者增加了对请求头字段的校验。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+
+headers_str <span class="token operator">=</span> <span class="token triple-quoted-string string">'''accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate, br
+accept-language: zh-cn
+appfrom: 16
+cluster: idc
+Connection: keep-alive
+Cookie: soso_17u_tab_open_index=1; H5CookieId=2a31035b-81b0-452f-8af5-4bc2cb6d6229; firsttime=1693790207090; abtkey=037eed29-b152-4fc3-92a8-027faa2dffc6; _tcudid_v2=GVAglBHWXx1wFDh4_P4gvwe79p_DO7Vf2Yj7sQ9vCd4; nus=userid=682242716&amp;nickName=%e5%90%8c%e7%a8%8b%e4%bc%9a%e5%91%98_0D043E7512A&amp;level=1; __tctma=144323752.1693790169808694.1693790169437.1693790169437.1693793067529.2; hotel_lang=zh-cn; 17uCNRefId=RefId=0&amp;SEFrom=&amp;SEKeyWords=; TicketSEInfo=RefId=0&amp;SEFrom=&amp;SEKeyWords=; CNSEInfo=RefId=0&amp;tcbdkeyid=&amp;SEFrom=&amp;SEKeyWords=&amp;RefUrl=; qdid=-9999; businessLine=hotel; H5Channel=mnoreferseo%2CSEO; indate=2023-09-09; outdate=2023-09-10; route=e83eaebd8f07fc1b8cfab528aeb2900e; lasttime=1694239332948; JSESSIONID=A23D8BD953AE131A1233B6F406759B2E
+deviceid: 2a31035b-81b0-452f-8af5-4bc2cb6d6229
+Host: www.ly.com
+Referer: https://www.ly.com/hotel/hotellist?pageSize=20&amp;t=1694239332807&amp;city=321&amp;inDate=2023-09-09&amp;outDate=2023-09-10&amp;filterList=8888_1
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+timezone: 8
+tmapi-client: tpc
+traceid: d6d36af2-7f3a-4504-a125-db1cfa470c97
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'''</span>
+
+headers_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+line_list <span class="token operator">=</span> headers_str<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> line_list<span class="token punctuation">:</span>
+    key <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    value <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    headers_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># print(headers_dict)</span>
+
+url <span class="token operator">=</span> <span class="token string">'https://www.ly.com/tapi/v2/list?pageSize=20&amp;t=1694239311116&amp;city=321&amp;inDate=2023-09-09&amp;outDate=2023-09-10&amp;filterList=8888_1&amp;pageIndex=0&amp;sugActInfo='</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers_dict<span class="token punctuation">)</span>
+res_json <span class="token operator">=</span> res<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+hotel_list <span class="token operator">=</span> res_json<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'hotelList'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> hotel <span class="token keyword">in</span> hotel_list<span class="token punctuation">:</span>
+    hotelName <span class="token operator">=</span> hotel<span class="token punctuation">[</span><span class="token string">'hotelName'</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>hotelName<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
                 
             </div>
             <hr/>
@@ -1120,7 +1166,7 @@ indexs_list<span class="token operator">=</span>re<span class="token punctuation
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">33.7k</span>
+                        class="white-color">65.5k</span>
             
             
             
@@ -1304,25 +1350,9 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
-            }
-        </script>
     
 
     <!-- 鼠标星星特效 -->
-     
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
-            }
-        </script>
     
 
      
