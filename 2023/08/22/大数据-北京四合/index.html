@@ -1,0 +1,1500 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="大数据-北京四合, Note">
+    <meta name="description" content="竞赛同学专用，其他同学不要浪费时间看了，有兴趣找我可了解报名参赛事宜">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>大数据-北京四合 | Note</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Note</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Note</div>
+        <div class="logo-desc">
+            
+            公网域名：xiaolily.cn
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '47d949f692e3e80fc314c918bc3dfbf772484f5024d96fbcad7a9ab1ea7bdd9e';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">大数据-北京四合</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-08-22
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-12-20
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="试题1-豆瓣音乐"><a href="#试题1-豆瓣音乐" class="headerlink" title="试题1-豆瓣音乐"></a>试题1-豆瓣音乐</h1><h2 id="任务A：数据采集与处理"><a href="#任务A：数据采集与处理" class="headerlink" title="任务A：数据采集与处理"></a>任务A：数据采集与处理</h2><h3 id="子任务一：数据采集"><a href="#子任务一：数据采集" class="headerlink" title="子任务一：数据采集"></a>子任务一：数据采集</h3><p>豆瓣音乐 Top 250（<a target="_blank" rel="noopener" href="https://music.douban.com/top250%EF%BC%89">https://music.douban.com/top250）</a><br><strong>标题、封面、歌手、发行日期、类型、介质、曲风、评分、评价人数并且存入到music.csv文件中</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># (爬虫)部门是公司的核心业务部门</span>
+<span class="token comment"># 负责创建requests对象和接受引擎发送过来的response（Downloader部门爬取到的内容），从中解析并提取出有用的数据。</span>
+<span class="token comment"># 它对应的是爬虫流程【解析数据】和【提取数据】这两步</span>
+<span class="token keyword">import</span> scrapy
+<span class="token keyword">import</span> bs4
+<span class="token keyword">import</span> re
+<span class="token comment"># 需要引用DoubanItem，它在items里面。因为是items在top250.py的上一级目录，所以要用..items，这是一个固定用法。</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span>items <span class="token keyword">import</span> DoubanItem
+<span class="token comment"># DoubanSpider类继承自scrapy.Spider类</span>
+<span class="token keyword">class</span> <span class="token class-name">DoubanSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'music'</span>   <span class="token comment"># 定义爬虫的名字，这个名字是爬虫的唯一标识</span>
+    <span class="token comment"># allowed_domains是定义允许爬虫爬取的网址域名（不需要加https://）。</span>
+    <span class="token comment"># 如果网址的域名不在这个列表里，就会被过滤掉</span>
+    <span class="token comment"># 一定在book.douban.com这个域名之下，防止爬到广告页面去</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'music.douban.com'</span><span class="token punctuation">]</span>
+    <span class="token comment"># 定义起始网址，就是爬虫从哪个网址开始抓取</span>
+    <span class="token comment"># 注：allowed_domains的设定对start_urls里的网址不会有影响</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'https://music.douban.com/top250'</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 根据url的规律，构建出前三页地址</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string">'https://music.douban.com/top250?start='</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>x <span class="token operator">*</span> <span class="token number">25</span><span class="token punctuation">)</span>
+        start_urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 解析下载器传过来的数据</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> response<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">:</span>
+            <span class="token comment"># 爬取的数据存储在response.text</span>
+            bs <span class="token operator">=</span> bs4<span class="token punctuation">.</span>BeautifulSoup<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+            datas <span class="token operator">=</span> bs<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'tr'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"item"</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> data <span class="token keyword">in</span>  datas<span class="token punctuation">:</span>
+                <span class="token comment">#实例化DoubanItem类。</span>
+                item <span class="token operator">=</span> DoubanItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token comment"># 标题</span>
+                item<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>text
+                <span class="token comment"># 封面</span>
+                item<span class="token punctuation">[</span><span class="token string">'fengmian'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'src'</span><span class="token punctuation">]</span>
+                <span class="token comment"># 评分</span>
+                item<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'rating_nums'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+                <span class="token comment"># 评论数</span>
+                rate_count <span class="token operator">=</span> data<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'pl'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+                pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">'(\d*?)人评价'</span><span class="token punctuation">)</span>
+                item<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>rate_count<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                <span class="token comment"># 剩下的要进入详情页继续爬</span>
+                href <span class="token operator">=</span> data<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'href'</span><span class="token punctuation">]</span>
+                <span class="token keyword">yield</span> scrapy<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>href<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>parse2<span class="token punctuation">,</span>meta<span class="token operator">=</span><span class="token punctuation">{</span>
+                    <span class="token string">'title'</span><span class="token punctuation">:</span>item<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token string">'fengmian'</span><span class="token punctuation">:</span>item<span class="token punctuation">[</span><span class="token string">'fengmian'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token string">'rate'</span><span class="token punctuation">:</span>item<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token string">'rate_count'</span><span class="token punctuation">:</span>item<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 解析详情页</span>
+    <span class="token keyword">def</span> <span class="token function">parse2</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        bs <span class="token operator">=</span> bs4<span class="token punctuation">.</span>BeautifulSoup<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+        item <span class="token operator">=</span> DoubanItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> response<span class="token punctuation">.</span>meta<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span>
+        item<span class="token punctuation">[</span><span class="token string">'fengmian'</span><span class="token punctuation">]</span> <span class="token operator">=</span> response<span class="token punctuation">.</span>meta<span class="token punctuation">[</span><span class="token string">'fengmian'</span><span class="token punctuation">]</span>
+        item<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span> <span class="token operator">=</span> response<span class="token punctuation">.</span>meta<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span>
+        item<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span> <span class="token operator">=</span> response<span class="token punctuation">.</span>meta<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span>
+        <span class="token comment"># 歌手、发行日期、类型、介质、曲风</span>
+        pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;a href="/search.*?"&gt;(.*?)&lt;/a&gt;'</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">[</span><span class="token string">'geshou'</span><span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'\d{4}-\d{2}-\d{2}'</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;span class="pl"&gt;专辑类型:&lt;/span&gt;&amp;nbsp;(.*?)\n'</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;span class="pl"&gt;介质:&lt;/span&gt;&amp;nbsp;(.*?)\n'</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">[</span><span class="token string">'jiezhi'</span><span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'&lt;span class="pl"&gt;流派:&lt;/span&gt;&amp;nbsp;(.*?)\n'</span><span class="token punctuation">)</span>
+        item<span class="token punctuation">[</span><span class="token string">'qufeng'</span><span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># （数据管道）部门则是公司的数据部门</span>
+<span class="token comment"># 只负责存储和处理Spiders部门提取到的有用数据。这个对应的是爬虫流程【存储数据】这一步。</span>
+<span class="token keyword">import</span> scrapy
+
+<span class="token comment">#定义一个类DoubanItem，它继承自scrapy.Item</span>
+<span class="token keyword">class</span> <span class="token class-name">DoubanItem</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># scrapy.Field() 相当于自定义字典类型</span>
+    title <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    fengmian <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    geshou <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    date <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token builtin">type</span> <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    jiezhi <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    qufeng <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    rate <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    rate_count <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    href <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    comment <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="子任务二：数据处理"><a href="#子任务二：数据处理" class="headerlink" title="子任务二：数据处理"></a>子任务二：数据处理</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>删除music2.csv中发型日期不为年-月-日格式的数据并且存入music2_c1_N.csv,N为删除的数据条数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+<span class="token comment"># 删除music2.csv中发型日期不为年-月-日格式的数据</span>
+<span class="token comment"># 并且存入music2_c1_N.csv,N为删除的数据条数</span>
+pattern <span class="token operator">=</span> <span class="token string">r'\d{4}-\d{2}-\d{2}'</span>
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>contains<span class="token punctuation">(</span>pattern<span class="token punctuation">)</span><span class="token punctuation">]</span>
+N <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span><span class="token operator">-</span><span class="token builtin">len</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">)</span>
+df_fil<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'music2_c1_</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">}</span></span><span class="token string">.csv'</span></span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>删除music2.csv中删除数据源中歌手名大于10个字符的数据记录并且存入music2_c2_<strong>N</strong>.csv,N为删除的条数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'geshou'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;=</span><span class="token number">10</span><span class="token punctuation">]</span>
+N <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span><span class="token operator">-</span><span class="token builtin">len</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">)</span>
+df_fil<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'music2_c2_</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">}</span></span><span class="token string">.csv'</span></span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>将music2.csv中评分低于8.5的数据设置为0并且存入music2_c3.csv；</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 方法一</span>
+<span class="token keyword">def</span> <span class="token function">rate</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> i <span class="token operator">&gt;</span> <span class="token number">8.5</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> i
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+df<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>rate<span class="token punctuation">)</span>
+
+<span class="token comment">#方法二</span>
+df<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>loc<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token number">8.5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'music2_c3.csv'</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>将music2.csv中评价人数设置为平均值并且存入music2_c4_N.csv，N为平均值取整</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+N <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'music2_c4_</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">}</span></span><span class="token string">.csv'</span></span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="任务B：数据分析与可视化"><a href="#任务B：数据分析与可视化" class="headerlink" title="任务B：数据分析与可视化"></a>任务B：数据分析与可视化</h2><h3 id="子任务一：数据分析"><a href="#子任务一：数据分析" class="headerlink" title="子任务一：数据分析"></a>子任务一：数据分析</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>分别统计各个曲风的音乐总数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'qufeng'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>统计各个曲风所有音乐的平均评价数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'qufeng'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>统计各个歌手音乐的平均评分</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'geshou'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span><span class="token builtin">round</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'mean_rate'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>统计所有大于9.0评分音乐的平均评价数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token number">9.0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'rate_count'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="子任务二：数据可视化"><a href="#子任务二：数据可视化" class="headerlink" title="子任务二：数据可视化"></a>子任务二：数据可视化</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 设置SimHei字体 防止中文乱码（二选一）</span>
+matplotlib<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.sans-serif'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'SimHei'</span>
+sns<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span>font<span class="token operator">=</span><span class="token string">'SimHei'</span><span class="token punctuation">)</span> 
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用柱状图显示各个歌手的音乐总数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+df_geshou <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'geshou'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>barplot<span class="token punctuation">(</span>data<span class="token operator">=</span>df_geshou<span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token string">'geshou'</span><span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+<span class="token comment"># df_geshou.plot(kind='bar')</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用折线图显示历年音乐平均评分走势</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+
+df<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+df_data <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>lineplot<span class="token punctuation">(</span>data<span class="token operator">=</span>df_data<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>rotation<span class="token operator">=</span><span class="token number">45</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'年份'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'平均评分'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># df_data.plot(kind='line')</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用饼图显示各曲风音乐数占比</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'music.csv'</span><span class="token punctuation">)</span>
+df_data <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'qufeng'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 第一个百分号被视为字符串格式化操作符的开始，而第二个百分号被视为实际的字符</span>
+df_data<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'pie'</span><span class="token punctuation">,</span>autopct<span class="token operator">=</span><span class="token string">'%0.2f%%'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"饼图显示各曲风音乐数占比"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="任务C：数据标注"><a href="#任务C：数据标注" class="headerlink" title="任务C：数据标注"></a>任务C：数据标注</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># (爬虫)部门是公司的核心业务部门</span>
+<span class="token comment"># 负责创建requests对象和接受引擎发送过来的response（Downloader部门爬取到的内容），从中解析并提取出有用的数据。</span>
+<span class="token comment"># 它对应的是爬虫流程【解析数据】和【提取数据】这两步</span>
+<span class="token keyword">import</span> scrapy
+<span class="token keyword">import</span> bs4
+<span class="token keyword">import</span> re
+<span class="token comment"># 需要引用DoubanItem，它在items里面。因为是items在top250.py的上一级目录，所以要用..items，这是一个固定用法。</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span>items <span class="token keyword">import</span> DoubanItem
+<span class="token comment"># DoubanSpider类继承自scrapy.Spider类</span>
+<span class="token keyword">class</span> <span class="token class-name">DoubanSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'music'</span>   <span class="token comment"># 定义爬虫的名字，这个名字是爬虫的唯一标识</span>
+    <span class="token comment"># allowed_domains是定义允许爬虫爬取的网址域名（不需要加https://）。</span>
+    <span class="token comment"># 如果网址的域名不在这个列表里，就会被过滤掉</span>
+    <span class="token comment"># 一定在book.douban.com这个域名之下，防止爬到广告页面去</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'music.douban.com'</span><span class="token punctuation">]</span>
+    <span class="token comment"># 定义起始网址，就是爬虫从哪个网址开始抓取</span>
+    <span class="token comment"># 注：allowed_domains的设定对start_urls里的网址不会有影响</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'https://music.douban.com/subject/1427374/comments/'</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 根据url的规律，构建出前三页地址</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'https://music.douban.com/subject/1427374/comments/?start=</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token operator">*</span><span class="token number">20</span><span class="token punctuation">}</span></span><span class="token string">&amp;limit=20&amp;status=P&amp;sort=new_score'</span></span>
+        start_urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 解析下载器传过来的数据</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> response<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">:</span>
+            <span class="token comment"># 爬取的数据存储在response.text</span>
+            bs <span class="token operator">=</span> bs4<span class="token punctuation">.</span>BeautifulSoup<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+            datas <span class="token operator">=</span> bs<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"comment"</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> data <span class="token keyword">in</span>  datas<span class="token punctuation">:</span>
+                <span class="token comment">#实例化DoubanItem类。</span>
+                item <span class="token operator">=</span> DoubanItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token comment"># 标题</span>
+                item<span class="token punctuation">[</span><span class="token string">'comment_time'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find<span class="token punctuation">(</span>class_<span class="token operator">=</span><span class="token string">"comment-time"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+                <span class="token comment"># 封面</span>
+                item<span class="token punctuation">[</span><span class="token string">'comment_content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"short"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+                <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>对情感倾向分数大于等于0.6的评论数据标注为正向</strong></p>
+<p><strong>对情感倾向分数大于0.4小于0.6的数据标注为中性数据</strong></p>
+<p><strong>对情感倾向分数小于等于0.4的评论信息标注为负向</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> snownlp <span class="token keyword">import</span> SnowNLP
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'comment.csv'</span><span class="token punctuation">)</span>
+<span class="token comment"># 过滤掉日期格式不对的</span>
+pattern <span class="token operator">=</span> <span class="token string">r'\d{4}-\d{2}-\d{2}'</span>
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'comment_time'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>contains<span class="token punctuation">(</span>pattern<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">snow</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> SnowNLP<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>sentiments<span class="token operator">&gt;=</span><span class="token number">0.6</span><span class="token punctuation">:</span>
+        qinggan <span class="token operator">=</span> <span class="token string">'正向'</span>
+    <span class="token keyword">elif</span> <span class="token number">0.6</span><span class="token operator">&gt;</span>SnowNLP<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>sentiments<span class="token operator">&gt;</span><span class="token number">0.4</span><span class="token punctuation">:</span>
+        qinggan <span class="token operator">=</span> <span class="token string">'中性'</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        qinggan <span class="token operator">=</span> <span class="token string">'负向'</span>
+    <span class="token keyword">return</span> qinggan
+
+df_fil<span class="token punctuation">[</span><span class="token string">'评分'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df_fil<span class="token punctuation">[</span><span class="token string">'comment_content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>SnowNLP<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">.</span>sentiments<span class="token punctuation">)</span>
+df_fil<span class="token punctuation">[</span><span class="token string">'情感倾向'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df_fil<span class="token punctuation">[</span><span class="token string">'comment_content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>snow<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"评分"</span><span class="token punctuation">,</span> <span class="token string">"情感倾向"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 随机抽取n行</span>
+
+df_fil<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'standard.csv'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="任务D：业务分析和方案架构设计"><a href="#任务D：业务分析和方案架构设计" class="headerlink" title="任务D：业务分析和方案架构设计"></a>任务D：业务分析和方案架构设计</h2><h3 id="子任务一：业务分析"><a href="#子任务一：业务分析" class="headerlink" title="子任务一：业务分析"></a>子任务一：业务分析</h3><p><strong>完成music_comment_all.csv评论情感分析功能，以月度未单位统计每月某电影的正向、负向评价数量，绘制折线图，并对音乐的风评趋势作出简要分析</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'standard.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'comment_time'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'comment_time'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">7</span><span class="token punctuation">]</span>
+<span class="token comment"># print(df.groupby(['comment_time','情感倾向']).size())</span>
+<span class="token comment"># print(df.groupby('comment_time')['情感倾向'].value_counts())</span>
+df_data <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'comment_time'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'情感倾向'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span>font<span class="token operator">=</span><span class="token string">'SimHei'</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>lineplot<span class="token punctuation">(</span>data<span class="token operator">=</span>df_data<span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token string">'comment_time'</span><span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">,</span>hue<span class="token operator">=</span><span class="token string">'情感倾向'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>rotation<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<h1 id="试题3—豆瓣电影"><a href="#试题3—豆瓣电影" class="headerlink" title="试题3—豆瓣电影"></a>试题3—豆瓣电影</h1><h2 id="子任务一：数据采集-1"><a href="#子任务一：数据采集-1" class="headerlink" title="子任务一：数据采集"></a>子任务一：数据采集</h2><p>打开豆瓣豆瓣电影分类排行榜 - 剧情片（<a target="_blank" rel="noopener" href="https://movie.douban.com/typerank?type_name=%E5%89%A7%E6%83%85&amp;type=11&amp;interval_id=100:90&amp;action=%EF%BC%89">https://movie.douban.com/typerank?type_name=%E5%89%A7%E6%83%85&amp;type=11&amp;interval_id=100:90&amp;action=）</a></p>
+<p><strong>爬取剧情片排行数据前250名的数据，例如评级、排名、封面地址、可播放、id、类型、国家地区、标题、视频地址、上线日期、演员数量、观看数量、评分、演员数量、是否看过并且存入到movie.csv文件中</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># (爬虫)部门是公司的核心业务部门</span>
+<span class="token comment"># 负责创建requests对象和接受引擎发送过来的response（Downloader部门爬取到的内容），从中解析并提取出有用的数据。</span>
+<span class="token comment"># 它对应的是爬虫流程【解析数据】和【提取数据】这两步</span>
+<span class="token keyword">import</span> scrapy
+<span class="token keyword">import</span> bs4
+<span class="token comment"># 需要引用DoubanItem，它在items里面。因为是items在top250.py的上一级目录，所以要用..items，这是一个固定用法。</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span>items <span class="token keyword">import</span> DoubanItem
+<span class="token comment"># DoubanSpider类继承自scrapy.Spider类</span>
+<span class="token keyword">class</span> <span class="token class-name">DoubanSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'douban'</span>   <span class="token comment"># 定义爬虫的名字，这个名字是爬虫的唯一标识</span>
+    <span class="token comment"># allowed_domains是定义允许爬虫爬取的网址域名（不需要加https://）。</span>
+    <span class="token comment"># 如果网址的域名不在这个列表里，就会被过滤掉</span>
+    <span class="token comment"># 一定在book.douban.com这个域名之下，防止爬到广告页面去</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'movie.douban.com'</span><span class="token punctuation">]</span>
+    <span class="token comment"># 定义起始网址，就是爬虫从哪个网址开始抓取</span>
+    <span class="token comment"># 注：allowed_domains的设定对start_urls里的网址不会有影响</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'https://movie.douban.com/j/chart/top_list?type=11&amp;interval_id=100%3A90&amp;action=&amp;start=0&amp;limit=20'</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 根据url的规律，构建出前三页地址</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'https://movie.douban.com/j/chart/top_list?type=11&amp;interval_id=100%3A90&amp;action=&amp;start=</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token number">20</span><span class="token operator">*</span>x<span class="token punctuation">}</span></span><span class="token string">&amp;limit=20'</span></span>
+        start_urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 解析下载器传过来的数据</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> row <span class="token keyword">in</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            item <span class="token operator">=</span> row
+            <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># （数据管道）部门则是公司的数据部门</span>
+<span class="token comment"># 只负责存储和处理Spiders部门提取到的有用数据。这个对应的是爬虫流程【存储数据】这一步。</span>
+<span class="token keyword">import</span> scrapy
+
+<span class="token comment">#定义一个类DoubanItem，它继承自scrapy.Item</span>
+<span class="token keyword">class</span> <span class="token class-name">DoubanItem</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># scrapy.Field() 相当于自定义字典类型</span>
+    rating <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    rank <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cover_url <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    is_playable <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token builtin">id</span> <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    types <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    regions <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    title <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    url <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    release_date <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    actor_count <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    vote_count <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    score <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    actors <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    is_watched <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="子任务二：数据处理-1"><a href="#子任务二：数据处理-1" class="headerlink" title="子任务二：数据处理"></a>子任务二：数据处理</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>删除movie2.csv中删除可观看字段(is_playable)为false的数据并且存入movie2_c1_N.csv,N为删除的数据条数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'is_playable'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+N <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">)</span>
+df_fil<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'movie2_c1_</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">}</span></span><span class="token string">.csv'</span></span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>删除movie2.csv中删除数据源中删除演员数(actor_count)大于30的数据记录并且存入movie2_c2_N.csv,N为删除对应记录后剩余的数据条数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'actor_count'</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span><span class="token number">30</span><span class="token punctuation">]</span>
+N <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">)</span>
+df_fil<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'movie2_c2_</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">}</span></span><span class="token string">.csv'</span></span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>将movie2.csv中国家和地区（regions）字段为多个国家和地区，将其设为该字段的第一个国家或地区值并且存入movie2_c3.csv</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+
+df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'movie2_c3.csv'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>将movie2.csv中观看数量（vote_count）统一设置为平均观看数(取整)并且存入movie2_c4_N.csv，N为平均观看数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+
+N <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'vote_count'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'vote_count'</span><span class="token punctuation">]</span> <span class="token operator">=</span> N
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">'vote_count'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'movie2_c4_</span><span class="token interpolation"><span class="token punctuation">{</span>N<span class="token punctuation">}</span></span><span class="token string">.csv'</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="任务B：数据分析与可视化-1"><a href="#任务B：数据分析与可视化-1" class="headerlink" title="任务B：数据分析与可视化"></a>任务B：数据分析与可视化</h2><h3 id="子任务一：数据分析-1"><a href="#子任务一：数据分析-1" class="headerlink" title="子任务一：数据分析"></a>子任务一：数据分析</h3><p><strong>分别统计各国家和地区的电影总数，展示前五名</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'regions'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>统计各国家和地区的平均评分排名，展示前五名</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'regions'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>统计中国（中国大陆、中国香港、中国台湾）电影的平均评分保留两位小数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>  
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'中国大陆'</span><span class="token punctuation">,</span> <span class="token string">'中国香港'</span><span class="token punctuation">,</span><span class="token string">'中国台湾'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">round</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'regions'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>统计所有评分大于等于8.5的电影的平均观看数，取整</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span> 
+
+df_fil <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token number">8.5</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>df_fil<span class="token punctuation">[</span><span class="token string">'score'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="子任务二：数据可视化-1"><a href="#子任务二：数据可视化-1" class="headerlink" title="子任务二：数据可视化"></a>子任务二：数据可视化</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> seaborn
+<span class="token comment"># 指定字体为SimHei</span>
+matplotlib<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.sans-serif'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'SimHei'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用柱状图显示各评分的电影总数</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+
+data <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'score'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># seaborn中的data必须是dataframe数据，先转化</span>
+data <span class="token operator">=</span> data<span class="token punctuation">.</span>to_frame<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+seaborn<span class="token punctuation">.</span>barplot<span class="token punctuation">(</span>data<span class="token operator">=</span>data<span class="token punctuation">,</span>x<span class="token operator">=</span>data<span class="token punctuation">.</span>index<span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用折线图显示2000年以后的电影平均评分走势</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'release_date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'release_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+df <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'release_date'</span><span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token number">2000</span><span class="token punctuation">]</span>
+
+seaborn<span class="token punctuation">.</span>lineplot<span class="token punctuation">(</span>data<span class="token operator">=</span>df<span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token string">'release_date'</span><span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token string">'score'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用饼图显示各国家和地区电影数数占比</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie2.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+data <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'regions'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+data<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'pie'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="任务C：数据标注-1"><a href="#任务C：数据标注-1" class="headerlink" title="任务C：数据标注"></a>任务C：数据标注</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># (爬虫)部门是公司的核心业务部门</span>
+<span class="token comment"># 负责创建requests对象和接受引擎发送过来的response（Downloader部门爬取到的内容），从中解析并提取出有用的数据。</span>
+<span class="token comment"># 它对应的是爬虫流程【解析数据】和【提取数据】这两步</span>
+<span class="token keyword">import</span> scrapy
+<span class="token keyword">import</span> bs4
+<span class="token comment"># 需要引用DoubanItem，它在items里面。因为是items在top250.py的上一级目录，所以要用..items，这是一个固定用法。</span>
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span>items <span class="token keyword">import</span> DoubanItem
+<span class="token comment"># DoubanSpider类继承自scrapy.Spider类</span>
+<span class="token keyword">class</span> <span class="token class-name">DoubanSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'douban'</span>   <span class="token comment"># 定义爬虫的名字，这个名字是爬虫的唯一标识</span>
+    <span class="token comment"># allowed_domains是定义允许爬虫爬取的网址域名（不需要加https://）。</span>
+    <span class="token comment"># 如果网址的域名不在这个列表里，就会被过滤掉</span>
+    <span class="token comment"># 一定在book.douban.com这个域名之下，防止爬到广告页面去</span>
+    allowed_domains <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'movie.douban.com'</span><span class="token punctuation">]</span>
+    <span class="token comment"># 定义起始网址，就是爬虫从哪个网址开始抓取</span>
+    <span class="token comment"># 注：allowed_domains的设定对start_urls里的网址不会有影响</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'https://movie.douban.com/subject/1292052/comments?sort=new_score&amp;status=P'</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># 根据url的规律，构建出前三页地址</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'https://movie.douban.com/subject/1292052/comments?start=</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token operator">*</span><span class="token number">20</span><span class="token punctuation">}</span></span><span class="token string">&amp;limit=20&amp;status=P&amp;sort=new_score'</span></span>
+        start_urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 解析下载器传过来的数据</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">#实例化DoubanItem类。</span>
+        item <span class="token operator">=</span> DoubanItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> response<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">:</span>
+            soup <span class="token operator">=</span> bs4<span class="token punctuation">.</span>BeautifulSoup<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+            datas <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'comment'</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> data <span class="token keyword">in</span> datas<span class="token punctuation">:</span>
+                item<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'comment-time'</span><span class="token punctuation">)</span>
+                item<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"comment-content"</span><span class="token punctuation">)</span>
+                <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="子任务一：分类标注"><a href="#子任务一：分类标注" class="headerlink" title="子任务一：分类标注"></a>子任务一：分类标注</h3><p><strong>对情感倾向分数大于等于0.6的评论数据标注为正向</strong></p>
+<p><strong>对情感倾向分数大于0.4小于0.6的数据标注为中性数据</strong></p>
+<p><strong>对情感倾向分数小于等于0.4的评论信息标注为负向</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> snownlp <span class="token keyword">import</span> SnowNLP
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'movie_comment_all.csv'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">snow</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> SnowNLP<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>sentiments<span class="token operator">&gt;=</span><span class="token number">0.6</span><span class="token punctuation">:</span>
+        qinggan <span class="token operator">=</span> <span class="token string">'正向'</span>
+    <span class="token keyword">elif</span> <span class="token number">0.6</span><span class="token operator">&gt;</span>SnowNLP<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>sentiments<span class="token operator">&gt;</span><span class="token number">0.4</span><span class="token punctuation">:</span>
+        qinggan <span class="token operator">=</span> <span class="token string">'中性'</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        qinggan <span class="token operator">=</span> <span class="token string">'负向'</span>
+    <span class="token keyword">return</span> qinggan
+
+df<span class="token punctuation">[</span><span class="token string">'评分'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>SnowNLP<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">.</span>sentiments<span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'情感倾向'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>snow<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"评分"</span><span class="token punctuation">,</span> <span class="token string">"情感倾向"</span><span class="token punctuation">,</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 随机抽取n行</span>
+
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'standard.csv'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="任务D：业务分析和方案架构设计-1"><a href="#任务D：业务分析和方案架构设计-1" class="headerlink" title="任务D：业务分析和方案架构设计"></a>任务D：业务分析和方案架构设计</h2><h3 id="子任务一：业务分析-1"><a href="#子任务一：业务分析-1" class="headerlink" title="子任务一：业务分析"></a>子任务一：业务分析</h3><p><strong>完成movie_comment_all.csv评论情感分析功能，以月度未单位统计每月某电影的正向、负向评价数量，绘制折线图，并对电影的风评趋势作出简要分析</strong></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'standard.csv'</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">str</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token string">r'(\d{4}-\d{2})'</span><span class="token punctuation">)</span>
+<span class="token comment"># print(df.groupby(['date','情感倾向']).size())</span>
+<span class="token comment"># print(df.groupby('date')['情感倾向'].value_counts())</span>
+df_data <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'情感倾向'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span>font<span class="token operator">=</span><span class="token string">'SimHei'</span><span class="token punctuation">)</span>
+sns<span class="token punctuation">.</span>lineplot<span class="token punctuation">(</span>data<span class="token operator">=</span>df_data<span class="token punctuation">,</span>x<span class="token operator">=</span><span class="token string">'date'</span><span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token string">'count'</span><span class="token punctuation">,</span>hue<span class="token operator">=</span><span class="token string">'情感倾向'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>rotation<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">彭韦浩</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://10.163.72.39:4000/2023/08/22/%E5%A4%A7%E6%95%B0%E6%8D%AE-%E5%8C%97%E4%BA%AC%E5%9B%9B%E5%90%88/">http://10.163.72.39:4000/2023/08/22/%E5%A4%A7%E6%95%B0%E6%8D%AE-%E5%8C%97%E4%BA%AC%E5%9B%9B%E5%90%88/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">彭韦浩</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">大数据</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/08/22/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%981/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="大数据竞赛模拟赛题1">
+                        
+                        <span class="card-title">大数据竞赛模拟赛题1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            竞赛同学专用，其他同学不要浪费时间看了，有兴趣找我可了解报名参赛事宜
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/08/21/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="大数据竞赛基础知识">
+                        
+                        <span class="card-title">大数据竞赛基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            竞赛同学专用，其他同学不要浪费时间看了，有兴趣找我可了解报名参赛事宜
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            <!-- Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2024</span>
+            
+            <a href="/about" target="_blank">彭韦浩</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">74k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">琼ICP备2021004272号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:532753310@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=532753310" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 532753310" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
+
+<!-- 鼠标点击烟花效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/djtx.js"></script>

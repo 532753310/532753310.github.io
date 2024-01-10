@@ -334,14 +334,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-15
+                    2023-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    3.5k
                 </div>
                 
 
@@ -378,7 +378,7 @@
             <div id="articleContent">
                 <h6 id="声明：网站根目录下的robots-txt一般写了爬虫的协议，请遵守道德，不要乱爬，出了事别说是我教的。"><a href="#声明：网站根目录下的robots-txt一般写了爬虫的协议，请遵守道德，不要乱爬，出了事别说是我教的。" class="headerlink" title="声明：网站根目录下的robots.txt一般写了爬虫的协议，请遵守道德，不要乱爬，出了事别说是我教的。"></a>声明：网站根目录下的robots.txt一般写了爬虫的协议，请遵守道德，不要乱爬，出了事别说是我教的。</h6><h2 id="一、三国演义下载（request）"><a href="#一、三国演义下载（request）" class="headerlink" title="一、三国演义下载（request）"></a>一、三国演义下载（request）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests 
 
-url <span class="token operator">=</span> <span class="token string">"http://10.163.72.55:7777/image/sanguo1.md"</span>
+url <span class="token operator">=</span> <span class="token string">"http://10.163.72.39:7777/image/sanguo1.md"</span>
 res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span> 
 <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span> <span class="token comment">#打印对象的响应状态码，以检查请求是否成功</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>text<span class="token punctuation">)</span>        <span class="token comment">#把对象的文本以字符串的形式返回</span>
@@ -389,8 +389,8 @@ res <span class="token operator">=</span> requests<span class="token punctuation
 <span class="token builtin">file</span><span class="token punctuation">.</span>write<span class="token punctuation">(</span>res<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
 <span class="token comment"># 关闭文档，相当于——    蔡徐坤.睡觉()  </span>
 <span class="token builtin">file</span><span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="练习：获取http-10-163-72-55-7777-image-HTTP-md"><a href="#练习：获取http-10-163-72-55-7777-image-HTTP-md" class="headerlink" title="练习：获取http://10.163.72.55:7777/image/HTTP.md"></a>练习：获取<a target="_blank" rel="noopener" href="http://10.163.72.55:7777/image/HTTP.md">http://10.163.72.55:7777/image/HTTP.md</a></h6><h6 id="扩展任务：批量爬取三国演义前三章"><a href="#扩展任务：批量爬取三国演义前三章" class="headerlink" title="扩展任务：批量爬取三国演义前三章"></a>扩展任务：批量爬取三国演义前三章</h6><h2 id="二、爬取一张图片（request）"><a href="#二、爬取一张图片（request）" class="headerlink" title="二、爬取一张图片（request）"></a>二、爬取一张图片（request）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
-url <span class="token operator">=</span> <span class="token string">'http://10.163.72.55/img/angry.55b2c9de.gif'</span>
+<h6 id="测验：批量爬取三国演义前三章，分别为sanguo2-md和sanguo3-md"><a href="#测验：批量爬取三国演义前三章，分别为sanguo2-md和sanguo3-md" class="headerlink" title="测验：批量爬取三国演义前三章，分别为sanguo2.md和sanguo3.md"></a>测验：批量爬取三国演义前三章，分别为sanguo2.md和sanguo3.md</h6><h2 id="二、爬取一张图片（request）"><a href="#二、爬取一张图片（request）" class="headerlink" title="二、爬取一张图片（request）"></a>二、爬取一张图片（request）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+url <span class="token operator">=</span> <span class="token string">'http://10.163.72.39/img/angry.55b2c9de.gif'</span>
 res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span> 
 <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>    <span class="token comment">#打印对象的响应状态码，以检查请求是否成功</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>content<span class="token punctuation">)</span>        <span class="token comment">#打印对象的二进制编码内容</span>
@@ -402,8 +402,11 @@ photo <span class="token operator">=</span> <span class="token builtin">open</sp
 photo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>res<span class="token punctuation">.</span>content<span class="token punctuation">)</span> 
 <span class="token comment"># 关闭文件</span>
 photo<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="练习：我网站的所有图片，自己爬着玩吧"><a href="#练习：我网站的所有图片，自己爬着玩吧" class="headerlink" title="练习：我网站的所有图片，自己爬着玩吧"></a>练习：我网站的所有图片，自己爬着玩吧</h6><h2 id="三、爬取一段视频（request）"><a href="#三、爬取一段视频（request）" class="headerlink" title="三、爬取一段视频（request）"></a>三、爬取一段视频（request）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests 
-url <span class="token operator">=</span> <span class="token string">'http://10.163.72.55/media/banner3.043818a0.mp4'</span>
+<p><em><strong>练习：我网站的所有图片，自己爬着玩吧</strong></em></p>
+<p><strong>测验：天堂图片网批量爬取，任务要求，批量爬取从高渐离到孙悟空的十几张图片，其中有一张图片被我删除了，在爬取的时候请跳过。</strong></p>
+<p><a href="http://10.163.72.39/%E6%B2%99%E6%BA%A2%E5%A3%81%E7%BA%B8%E5%9B%BE%E7%89%87_212%E5%BC%A0%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%20(%E5%A4%A9%E5%A0%82%E5%9B%BE%E7%89%87%E7%BD%91).html">http://10.163.72.39/%E6%B2%99%E6%BA%A2%E5%A3%81%E7%BA%B8%E5%9B%BE%E7%89%87_212%E5%BC%A0%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%20(%E5%A4%A9%E5%A0%82%E5%9B%BE%E7%89%87%E7%BD%91).html</a></p>
+<h2 id="三、爬取一段视频（request）"><a href="#三、爬取一段视频（request）" class="headerlink" title="三、爬取一段视频（request）"></a>三、爬取一段视频（request）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests 
+url <span class="token operator">=</span> <span class="token string">'http://10.163.72.39/media/banner3.043818a0.mp4'</span>
 res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>    <span class="token comment">#打印对象的响应状态码，以检查请求是否成功</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>content<span class="token punctuation">)</span>        <span class="token comment">#打印对象的二进制编码内容</span>
@@ -416,7 +419,8 @@ video<span class="token punctuation">.</span>write<span class="token punctuation
 <span class="token comment"># 关闭文件</span>
 video<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="四、豆瓣电影top250爬虫（静态网页bs4）"><a href="#四、豆瓣电影top250爬虫（静态网页bs4）" class="headerlink" title="四、豆瓣电影top250爬虫（静态网页bs4）"></a>四、豆瓣电影top250爬虫（静态网页bs4）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>openpyxl
+<h2 id="四、豆瓣电影top250爬虫（静态网页bs4）"><a href="#四、豆瓣电影top250爬虫（静态网页bs4）" class="headerlink" title="四、豆瓣电影top250爬虫（静态网页bs4）"></a>四、豆瓣电影top250爬虫（静态网页bs4）</h2><p><a href="http://10.163.72.39/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%20Top%20250.html">http://10.163.72.39/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%20Top%20250.html</a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>openpyxl
 <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
 
 wb<span class="token operator">=</span>openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -428,7 +432,7 @@ sheet<span class="token punctuation">[</span><span class="token string">'C1'</sp
 sheet<span class="token punctuation">[</span><span class="token string">'D1'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'链接'</span>
 
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    url<span class="token operator">=</span><span class="token string">'http://10.163.72.55/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%20Top%20250.html?start='</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'&amp;filter='</span>
+    url<span class="token operator">=</span><span class="token string">'http://10.163.72.39/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%20Top%20250.html?start='</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'&amp;filter='</span>
     <span class="token comment"># url='https://movie.douban.com/top250?start='+str(i)+'&amp;filter='</span>
     headers<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'user-agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'</span><span class="token punctuation">}</span>
     res<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
@@ -456,13 +460,12 @@ res<span class="token operator">=</span>requests<span class="token punctuation">
 soup<span class="token operator">=</span>BeautifulSoup<span class="token punctuation">(</span>res<span class="token punctuation">.</span>text<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">)</span>
 items <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'h5'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'card-title'</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> item <span class="token keyword">in</span> items<span class="token punctuation">:</span>
-    name <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">r'【.*】'</span><span class="token punctuation">,</span>item<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    name <span class="token operator">=</span> name<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token comment">#去掉前面的括号</span>
-    name <span class="token operator">=</span> name<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">#去掉前面的括号</span>
+    pattern <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'【(.*?)】'</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>pattern<span class="token punctuation">,</span>item<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
     txt<span class="token punctuation">.</span>write<span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">'down'</span> <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
 
-txt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+txt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="六、爬取神秘暗网留言板（动态网站json）"><a href="#六、爬取神秘暗网留言板（动态网站json）" class="headerlink" title="六、爬取神秘暗网留言板（动态网站json）"></a>六、爬取神秘暗网留言板（动态网站json）</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>openpyxl
 
@@ -490,8 +493,7 @@ sheet<span class="token punctuation">[</span><span class="token string">'D1'</sp
         message <span class="token operator">=</span> item<span class="token punctuation">[</span><span class="token string">'message'</span><span class="token punctuation">]</span>
         sheet<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">id</span><span class="token punctuation">,</span>username<span class="token punctuation">,</span>rankScore<span class="token punctuation">,</span>message<span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'.\神秘暗网留言板爬虫.xlsx'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'.\神秘暗网留言板爬虫.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="七、带着参数请求数据（偷看隐藏数据）"><a href="#七、带着参数请求数据（偷看隐藏数据）" class="headerlink" title="七、带着参数请求数据（偷看隐藏数据）"></a>七、带着参数请求数据（偷看隐藏数据）</h2><p>假设神秘暗网首页作业栏目，不可以点击查看更多，可以携带参数查看隐藏信息。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
@@ -559,7 +561,7 @@ res_json <span class="token operator">=</span> res<span class="token punctuation
 <h2 id="十、使用scrpit框架爬豆瓣"><a href="#十、使用scrpit框架爬豆瓣" class="headerlink" title="十、使用scrpit框架爬豆瓣"></a>十、使用scrpit框架爬豆瓣</h2><pre class="line-numbers language-dos" data-language="dos"><code class="language-dos">pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple/ # 安装环境
 scrapy startproject douban # 创建项目
 scrapy crawl douban #运行工程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><strong>爬虫模块</strong></p>
+<p><strong>爬虫模块（在spiders目录下新建xx.py文件）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># (爬虫)部门是公司的核心业务部门</span>
 <span class="token comment"># 负责创建requests对象和接受引擎发送过来的response（Downloader部门爬取到的内容），从中解析并提取出有用的数据。</span>
 <span class="token comment"># 它对应的是爬虫流程【解析数据】和【提取数据】这两步</span>
@@ -602,7 +604,7 @@ scrapy crawl douban #运行工程<span aria-hidden="true" class="line-numbers-ro
             <span class="token comment">#yield item是把获得的item传递给引擎。</span>
             <span class="token comment">#有点类似return，不过它和return不同的点在于，它不会结束函数，且能多次返回信息</span>
             <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>数据处理模块</strong></p>
+<p><strong>数据处理模块（items.py）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># （数据管道）部门则是公司的数据部门</span>
 <span class="token comment"># 只负责存储和处理Spiders部门提取到的有用数据。这个对应的是爬虫流程【存储数据】这一步。</span>
 <span class="token keyword">import</span> scrapy
@@ -613,12 +615,7 @@ scrapy crawl douban #运行工程<span aria-hidden="true" class="line-numbers-ro
     title <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#定义书名的数据属性</span>
     publish <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#定义出版信息的数据属性</span>
     score <span class="token operator">=</span> scrapy<span class="token punctuation">.</span>Field<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#定义评分的数据属性</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Crawl responsibly by identifying yourself (and your website) on the user-agent</span>
-USER_AGENT <span class="token operator">=</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'</span>
-
-<span class="token comment"># 是否需要遵守爬虫规则，改成不遵守</span>
-ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>设置</strong></p>
+<p><strong>设置（settings.py）</strong></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 保存爬取的数据</span>
 FEED_URI<span class="token operator">=</span><span class="token string">'./storage/data/%(name)s.csv'</span>
 FEED_FORMAT<span class="token operator">=</span><span class="token string">'csv'</span>
@@ -629,7 +626,7 @@ USER_AGENT <span class="token operator">=</span> <span class="token string">'Moz
 ROBOTSTXT_OBEY <span class="token operator">=</span> <span class="token boolean">False</span>
 <span class="token comment"># 爬虫的速度</span>
 DOWNLOAD_DELAY <span class="token operator">=</span> <span class="token number">0.5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>主程序启动模块</strong> <em><strong>（和scrapy.cfg同级）</strong></em></p>
+<p><strong>主程序启动模块</strong> <em><strong>（main.py，和scrapy.cfg同级）</strong></em>（注意：一定要将项目文件夹作为编程文件夹）</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#导入cmdline模块,可以实现控制终端命令行。</span>
 <span class="token keyword">from</span> scrapy <span class="token keyword">import</span> cmdline
 <span class="token comment">#用execute（）方法，输入运行scrapy的命令。</span>
@@ -672,7 +669,7 @@ cmdline<span class="token punctuation">.</span>execute<span class="token punctua
         item <span class="token operator">=</span> DoubanItem<span class="token punctuation">(</span><span class="token punctuation">)</span>
         item<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> bs<span class="token punctuation">.</span>find<span class="token punctuation">(</span>class_<span class="token operator">=</span><span class="token string">'arti_title'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
         <span class="token keyword">yield</span> item<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="十一、破解并下载视频流"><a href="#十一、破解并下载视频流" class="headerlink" title="十一、破解并下载视频流"></a>十一、破解并下载视频流</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>re<span class="token punctuation">,</span>random
+<h2 id="十一、破解并下载视频流"><a href="#十一、破解并下载视频流" class="headerlink" title="十一、破解并下载视频流"></a>十一、破解并下载视频流</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests<span class="token punctuation">,</span>re<span class="token punctuation">,</span>random
 <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
 
 <span class="token comment"># 伪装请求头</span>
@@ -940,24 +937,24 @@ hotel_list <span class="token operator">=</span> res_json<span class="token punc
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/18/%E5%BB%96%E8%80%81%E5%B8%88Python%E6%B5%B7%E9%BE%9F%E7%94%BB%E5%9B%BE%E6%95%B4%E7%90%86/">
+                <a href="/2022/03/21/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB4%E2%80%94%E7%BD%91%E6%98%93%E4%BA%91%E6%AD%8C%E6%9B%B2%E7%88%AC%E8%99%AB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="廖老师Python海龟画图整理">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Python网络爬虫4—网易云歌曲爬虫">
                         
-                        <span class="card-title">廖老师Python海龟画图整理</span>
+                        <span class="card-title">Python网络爬虫4—网易云歌曲爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            感谢廖老师辛苦研发的题目和学习资料、本人仅负责整理上传（来自一个偷懒的搬运工）
+                            本意是学习爬虫技术，没想到一不小心连付费的歌曲也可以爬，请不要用于牟利，后果自负
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
                             </span>
                         <span class="publish-author">
                             
@@ -976,6 +973,14 @@ hotel_list <span class="token operator">=</span> res_json<span class="token punc
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/">
+                        <span class="chip bg-color">项目教学</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">网络爬虫</span>
                     </a>
                     
                 </div>
@@ -1158,7 +1163,7 @@ hotel_list <span class="token operator">=</span> res_json<span class="token punc
         <div class="col s12 m8 l8 copy-right">
             <!-- Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <a href="/about" target="_blank">彭韦浩</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1166,7 +1171,7 @@ hotel_list <span class="token operator">=</span> res_json<span class="token punc
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">65.5k</span>
+                        class="white-color">74k</span>
             
             
             

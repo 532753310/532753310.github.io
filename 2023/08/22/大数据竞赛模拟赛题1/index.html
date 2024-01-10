@@ -160,7 +160,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '47d949f692e3e80fc314c918bc3dfbf772484f5024d96fbcad7a9ab1ea7bdd9e';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -326,21 +326,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-18
+                    2023-09-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    15 分
                 </div>
                 
 
@@ -368,8 +368,124 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="赛题1"><a href="#赛题1" class="headerlink" title="赛题1"></a>赛题1</h1><h2 id="任务A：数据采集与处理"><a href="#任务A：数据采集与处理" class="headerlink" title="任务A：数据采集与处理"></a>任务A：数据采集与处理</h2><h3 id="子任务一：数据采集"><a href="#子任务一：数据采集" class="headerlink" title="子任务一：数据采集"></a>子任务一：数据采集</h3><p>爬取酒店列表数据，例如酒店名称、地址、商圈、评分、评论数、类型，并且存入到hotel.csv文件中</p>
+                <h1 id="高铁里程"><a href="#高铁里程" class="headerlink" title="高铁里程"></a>高铁里程</h1><p>(1)   数据采集</p>
+<p>(2)   导入pandas创建DataFrame对象df,显示所有数据列，要求格式保持列对齐。</p>
+<p>(3)   将空白全部填0处理。</p>
+<p>(4)   增加排名列，排名依据为营业里程数</p>
+<p>(5)   将新数据导出为DataTest2.xlsx。</p>
+<p>(6)   以DataTest2.xlsx中国家和地区为横纵数据，以营业里程 在建里程  合计里程 为纵轴数据绘制折线图，要求有标题内容是全球高铁里程;有图例；有网格线。</p>
+<p>(7)   将第6题图表类型改为柱形图。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># (1)数据采集</span>
+<span class="token keyword">import</span> requests
+<span class="token keyword">from</span> pandas <span class="token keyword">import</span> DataFrame
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib
+
+<span class="token comment">#设置列名对齐</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.unicode.east_asian_width'</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+
+url <span class="token operator">=</span> <span class="token string">'http://10.163.72.39/BigData_Data_get.php?currentPage=1&amp;page_size=50&amp;table=%E9%AB%98%E9%93%81%E9%87%8C%E7%A8%8B'</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+<span class="token comment"># print(res.text)</span>
+res_json <span class="token operator">=</span> res<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> res_json<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span>
+data_df <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+data_df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'高铁.csv'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token comment"># print(data_df)</span>
+
+<span class="token comment"># (2)	导入pandas创建DataFrame对象df,显示所有数据列，要求格式保持列对齐。</span>
+<span class="token comment">#设置列名对齐</span>
+pd<span class="token punctuation">.</span>set_option<span class="token punctuation">(</span><span class="token string">'display.unicode.east_asian_width'</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'高铁.csv'</span><span class="token punctuation">,</span>index_col<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+<span class="token comment"># (3)	将空白全部填0处理。</span>
+df1 <span class="token operator">=</span>  df<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df1<span class="token punctuation">)</span>
+
+<span class="token comment"># (4)	增加排名列，排名依据为营业里程数</span>
+df2 <span class="token operator">=</span> df1<span class="token punctuation">[</span><span class="token string">'营业里程/万千米'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df2<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+
+df1<span class="token punctuation">[</span><span class="token string">'排名'</span><span class="token punctuation">]</span> <span class="token operator">=</span> df2<span class="token punctuation">.</span>index
+<span class="token keyword">print</span><span class="token punctuation">(</span>df1<span class="token punctuation">)</span>
+
+<span class="token comment"># (5)	将新数据导出为DataTest2.xlsx。</span>
+df1<span class="token punctuation">.</span>to_excel<span class="token punctuation">(</span><span class="token string">'DataTest2.xlsx'</span><span class="token punctuation">)</span>
+
+df3 <span class="token operator">=</span> df1<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'营业里程/万千米'</span><span class="token punctuation">,</span><span class="token string">'在建里程/万千米'</span><span class="token punctuation">,</span><span class="token string">'合计里程/万千米'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df3<span class="token punctuation">)</span>
+
+<span class="token comment"># (6)	以DataTest2.xlsx中国家和地区为横纵数据，</span>
+<span class="token comment"># 以营业里程 在建里程  合计里程 为纵轴数据绘制折线图，</span>
+<span class="token comment"># 要求有标题内容是全球高铁里程;有图例；有网格线。</span>
+<span class="token comment"># 指定字体为SimHei</span>
+matplotlib<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">'font.sans-serif'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'SimHei'</span>
+df3<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'line'</span><span class="token punctuation">,</span>title<span class="token operator">=</span><span class="token string">'全球高铁里程'</span><span class="token punctuation">,</span>grid<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># (7)	将第6题图表类型改为柱形图。</span>
+
+df3<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>kind<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span>title<span class="token operator">=</span><span class="token string">'全球高铁里程'</span><span class="token punctuation">,</span>grid<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="赛题1"><a href="#赛题1" class="headerlink" title="赛题1"></a>赛题1</h1><h2 id="任务A：数据采集与处理"><a href="#任务A：数据采集与处理" class="headerlink" title="任务A：数据采集与处理"></a>任务A：数据采集与处理</h2><h3 id="子任务一：数据采集"><a href="#子任务一：数据采集" class="headerlink" title="子任务一：数据采集"></a>子任务一：数据采集</h3><p>爬取酒店列表数据，例如酒店名称、地址、商圈、评分、评论数、类型，并且存入到hotel.csv文件中</p>
 <p><a target="_blank" rel="noopener" href="https://www.ly.com/hotel/hotellist?pageSize=20&amp;t=1693794571107&amp;city=321&amp;inDate=2023-09-04&amp;outDate=2023-09-05&amp;filterList=8888_1">https://www.ly.com/hotel/hotellist?pageSize=20&amp;t=1693794571107&amp;city=321&amp;inDate=2023-09-04&amp;outDate=2023-09-05&amp;filterList=8888_1</a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> pandas <span class="token keyword">import</span> Series<span class="token punctuation">,</span>DataFrame
+<span class="token keyword">import</span> requests
+
+headers <span class="token operator">=</span> <span class="token triple-quoted-string string">'''GET /tapi/v2/list?pageSize=20&amp;t=1693794571107&amp;city=321&amp;inDate=2023-09-24&amp;outDate=2023-09-25&amp;filterList=8888_1&amp;pageIndex=1&amp;sugActInfo=&amp;traceToken=%7C*%7CcityId:201%7C*%7CqId:ba76a09f-5078-460c-9b7d-57217c13821b%7C*%7Cst:city%7C*%7CsId:201%7C*%7Cscene_ids:0%7C*%7Csmz:A%7C*%7Cbkt:r8%7C*%7C HTTP/1.1
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Cookie: H5CookieId=659dd903-48ae-4b67-8fb2-33d8705beed5; businessLine=hotel; firsttime=1695293420836; hotel_lang=zh-cn; qdid=-9999; 17uCNRefId=RefId=0&amp;SEFrom=&amp;SEKeyWords=; TicketSEInfo=RefId=0&amp;SEFrom=&amp;SEKeyWords=; CNSEInfo=RefId=0&amp;tcbdkeyid=&amp;SEFrom=&amp;SEKeyWords=&amp;RefUrl=; route=2380a3751663c45f75a020910759de98; H5Channel=mnoreferseo%2CSEO; Hm_lvt_c6a93e2a75a5b1ef9fb5d4553a2226e5=1695293420,1695517390; Hm_lpvt_c6a93e2a75a5b1ef9fb5d4553a2226e5=1695517390; lasttime=1695517391132; JSESSIONID=BC2BC32ED75C1C4DD80AEDA392CAE8C5; indate=2023-09-24; outdate=2023-09-25
+Host: www.ly.com
+Referer: https://www.ly.com/hotel/hotellist?pageSize=20&amp;t=1695517474275&amp;city=321&amp;inDate=2023-09-24&amp;outDate=2023-09-25&amp;filterList=8888_1
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.289 Safari/537.36
+accept: application/json, text/plain, */*
+accept-language: zh-cn
+appfrom: 16
+cluster: idc
+deviceid: 659dd903-48ae-4b67-8fb2-33d8705beed5
+sec-ch-ua: "Chromium";v="15", "Not.A/Brand";v="8"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+timezone: 8
+tmapi-client: tpc
+traceid: 9c2b492e-e312-4cb1-97e9-04d6264539dc'''</span>
+headers_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+line_list <span class="token operator">=</span> headers<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> line_list<span class="token punctuation">:</span>
+    key <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    value <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    headers_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+<span class="token comment"># print(headers_dict)</span>
+
+url <span class="token operator">=</span> <span class="token string">'https://www.ly.com/tapi/v2/list?pageSize=20&amp;t=1695293420663&amp;city=321&amp;inDate=2023-09-21&amp;outDate=2023-09-22&amp;filterList=8888_1&amp;pageIndex=1&amp;sugActInfo=&amp;traceToken=%7C*%7CcityId:201%7C*%7CqId:29b85124-bba0-4f2f-b072-156f0e81b228%7C*%7Cst:city%7C*%7CsId:201%7C*%7Cscene_ids:0%7C*%7Csmz:A%7C*%7Cbkt:r8%7C*%7C'</span>
+res <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers_dict<span class="token punctuation">)</span>
+res_json <span class="token operator">=</span> res<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>res_json<span class="token punctuation">)</span><span class="token punctuation">)</span>
+hotel_list <span class="token operator">=</span> res_json<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'hotelList'</span><span class="token punctuation">]</span>
+
+hotel_list_df <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>data<span class="token operator">=</span>hotel_list<span class="token punctuation">)</span>
+<span class="token comment"># df = df[['A', 'B']]</span>
+hotel_list_df <span class="token operator">=</span> hotel_list_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'hotelName'</span><span class="token punctuation">,</span><span class="token string">'hotelAddress'</span><span class="token punctuation">,</span><span class="token string">'recallReason'</span><span class="token punctuation">,</span>
+                               <span class="token string">'commentScore'</span><span class="token punctuation">,</span><span class="token string">'commentCount'</span><span class="token punctuation">,</span><span class="token string">'starLevelDes'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token comment"># print(hotel_list_df)</span>
+
+hotel_list_df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'hotel.csv'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+
+hotel_list_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'hotel.csv'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hotel_list_df<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">from</span> pandas <span class="token keyword">import</span> Series<span class="token punctuation">,</span>DataFrame
 
@@ -508,7 +624,7 @@ hotel_dict<span class="token punctuation">[</span><span class="token string">'le
 df1 <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>data <span class="token operator">=</span> hotel_dict<span class="token punctuation">)</span>
 df1<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'hotel.csv'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="子任务二：数据处理"><a href="#子任务二：数据处理" class="headerlink" title="子任务二：数据处理"></a>子任务二：数据处理</h3><p>先读取文件，因为我们的数据中没有缺失的，手动制造一点</p>
+<h2 id="子任务一-：商圈字段处理"><a href="#子任务一-：商圈字段处理" class="headerlink" title="子任务一+：商圈字段处理"></a>子任务一+：商圈字段处理</h2><h3 id="子任务二：数据处理"><a href="#子任务二：数据处理" class="headerlink" title="子任务二：数据处理"></a>子任务二：数据处理</h3><p>先读取文件，因为我们的数据中没有缺失的，手动制造一点</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">file</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'hotel.csv'</span><span class="token punctuation">)</span>
 <span class="token builtin">file</span><span class="token punctuation">[</span><span class="token string">'hotel_name'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>nan
 <span class="token builtin">file</span><span class="token punctuation">[</span><span class="token string">'rate'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>nan
@@ -814,13 +930,13 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/08/21/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AB%9E%E8%B5%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                <a href="/2023/08/22/%E5%A4%A7%E6%95%B0%E6%8D%AE-%E5%8C%97%E4%BA%AC%E5%9B%9B%E5%90%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="大数据竞赛基础知识">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="大数据-北京四合">
                         
-                        <span class="card-title">大数据竞赛基础知识</span>
+                        <span class="card-title">大数据-北京四合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -831,7 +947,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-22
                             </span>
                         <span class="publish-author">
                             
@@ -1032,7 +1148,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
         <div class="col s12 m8 l8 copy-right">
             <!-- Copyright&nbsp;&copy;
             
-                <span id="year">2022-2023</span>
+                <span id="year">2022-2024</span>
             
             <a href="/about" target="_blank">彭韦浩</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1040,7 +1156,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">65.5k</span>
+                        class="white-color">74k</span>
             
             
             
